@@ -1,0 +1,84 @@
+.navbar-inverse .navbar-nav > li > a,
+.navbar-inverse .navbar-brand {
+  color: antiquewhite;
+  font-family: "Fondamento";
+}
+
+.navbar-inverse .navbar-brand {
+  font-size: 25px;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  font-size: 20px;
+  text-align: right;
+}
+.container .cat {
+  text-align: right;
+}
+#no {
+  text-align: right;
+  margin: 0 auto;
+  color: black;
+}
+.row {
+  color: black;
+}
+
+.caption p {
+  font-size: 20px;
+  line-height: 1.7;
+  color: black;
+}
+.container {
+  text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 6px 11px rgba(0, 0, 0, 0.1),
+    0px 16px 18px rgba(0, 0, 0, 0.1);
+}
+
+.thumbnail {
+  border: none;
+  height: 250px;
+  margin-top: 20%;
+  margin-bottom: 55%;
+}
+
+body {
+  color: #007bff;
+  padding-top: 70px;
+}
+.search {
+  width: 70%;
+  border-radius: 15px;
+  text-align: right;
+  height: 45px;
+}
+
+form {
+  text-align: right;
+  font-size: 20px;
+}
+label {
+  text-align: right;
+  color: black;
+  text-shadow: none;
+}
+button {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: antiquewhite;
+  height: 41px;
+  border-radius: 150px;
+  width: 4%;
+}
+hr {
+  border: 1px solid #007bff;
+}
+#bs-nav-demo {
+  margin-right: 45px;
+}
+
+.thumbnail > img {
+  margin: 0 auto;
+  height: 100%;
+  width: 70%;
+  border-radius: 10px;
+}

@@ -1,0 +1,49 @@
+<%-include("parts/h") %>
+<!--vars: arrBooks, s, bo-->
+<div class="container">
+  <form class="form-inline" action="/search/b/book" method="POST">
+    <button type="submit">
+      <i class="fa fa-search"></i>
+    </button>
+    <input
+      type="search"
+      class="search"
+      placeholder="חפש/י ספר או מחבר/ת"
+      name="s"
+    />
+  </form>
+
+  <h1 class="cat">מציג תוצאות עבור: <%= s %></h1>
+  <hr />
+  <div
+    class="row text-center"
+    style="display: flex; flex-wrap: wrap; position: relative;"
+  >
+    <% arrBooks.forEach(function(book){ if(book.name.includes(s) ||
+    book.writer.includes(s)) { bo = true %>
+    <div class="col-lg-3 col-md-4 col-sm-6">
+      <a href="/search/<%=book._id%>">
+        <div class="thumbnail caption">
+          <img src="<%=book.img %>" />
+          <p>
+            <b><%= book.name %> </b>
+            <br />
+            <%= book.writer %>
+
+            <br />
+            <%= book.price %>
+          </p>
+        </div>
+      </a>
+    </div>
+    <%}})%>
+  </div>
+
+  <% if (!bo){ %>
+  <h2 id="no">
+    :לא נמצאו תוצאות עבור <%=s %>
+  </h2>
+  <%}%>
+</div>
+
+<%-include("parts/footer") %>

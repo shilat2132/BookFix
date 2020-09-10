@@ -1,0 +1,57 @@
+<%-include("parts/h") %>
+<!--vars: ors-->
+<style>
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  td,
+  th {
+    border: 2px solid #dddddd;
+    padding: 8px;
+    text-align: right;
+  }
+
+  th {
+    border: 3px solid black;
+  }
+  tr:nth-child(2n) {
+    background-color: #dddddd;
+  }
+</style>
+<div
+  style="text-align: right; color: black; text-shadow: none;"
+  class="container"
+>
+  <h1>הזמנות</h1>
+  <hr />
+  <table>
+    <thead>
+      <tr>
+        <th>שם המזמין</th>
+        <th>פלאפון</th>
+        <th>כתובת</th>
+        <th>שם הספר/ים</th>
+        <th>דרך התשלום</th>
+        <th>תאריך ההזמנה</th>
+        <th>ההזמנה נשלחה כבר?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% ors.forEach(function(or){%>
+      <tr>
+        <td><%=or.name %></td>
+        <td><%=or.phone %></td>
+        <td><%=or.address %></td>
+        <td><%=or.book %></td>
+        <td><%=or.payment %></td>
+        <td><%=or.created.toDateString() %></td>
+        <td><input type="checkbox" /></td>
+      </tr>
+
+      <% }) %>
+    </tbody>
+  </table>
+</div>
+<%-include("parts/footer") %>

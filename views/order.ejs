@@ -1,0 +1,65 @@
+<%-include("parts/h") %>
+<!--vars: cat, id -->
+<style>
+    input[type="text"]::placeholder, textarea::placeholder, input[type="text"], textarea {  
+                  
+                  text-align: right; 
+              } 
+              input[type="radio"]{
+                  margin-right: 5%;
+              }      
+              hr{
+                  width: 60%;
+                  margin-left: 40%;
+              }
+              
+</style>
+<div style="text-align: right;" class="container">
+  <h1 >הזמן ספר</h1>
+  <hr />
+  <form style="width: 60%; margin-left: 40%;" action="/<%=cat%>/<%=id%>" method="POST">  
+      <div class="form-group">
+          <label>שם מלא</label>
+        <input class="form-control" type="text" placeholder="שם מלא" name="order[name]" required />
+      </div> 
+      <div class="form-group">
+        <label>מספר פלאפון</label>
+        <input class="form-control" type="text" placeholder="מספר פלאפון" name="order[phone]" required />
+      </div>
+      <div class="form-group">
+        <label>כתובת שאליה ישלח הספר (כולל עיר)</label>
+        <input class="form-control" type="text" placeholder="כתובת" name="order[address]" required />
+      </div>
+      <div class="form-group">
+        <label>שם הספר/ים</label>
+        <textarea class="form-control" placeholder="שם הספר/ים" name="order[book]" required></textarea>
+      </div>
+      <div class="form-group">
+        <label>שילמתי דרך</label>
+        <br>
+        
+        <label for="pepper">פפר</label>
+        <input type="radio" id="pepper" name="order[payment]" value="pepper" required>
+         
+        <label for="bit">ביט</label>
+           <input  type="radio" id="bit" name="order[payment]" value="bit" required>
+       
+           <label for="paybox">פייבוקס</label>
+           <input type="radio" id="paybox" name="order[payment]" value="paybox" required>
+      </div>
+    
+    
+      <div class="form-group">
+        <button style="background-color: #007bff;
+        border-color: #007bff;
+        color: antiquewhite; width: 30%;
+            height: 50px;
+            font-size: 26px;
+            margin-left: 70%;" type="submit" class="form-control">הזמן</button>
+      </div>
+    
+      </div>
+    </form>
+    
+</div>
+<%-include("parts/footer") %>

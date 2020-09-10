@@ -1,0 +1,153 @@
+<%-include("parts/showh") %>
+<!--vars: cat, id, ser, chosenBook, arrBooks -->
+<script>
+  function fu() {
+    var payment = document.querySelector(".payment");
+    if (payment.style.display == "block") {
+      payment.style.display = "none";
+    } else {
+      payment.style.display = "block";
+    }
+  }
+</script>
+<div class="container">
+  <form class="form-inline" action="/search/b/book" method="POST">
+    <button type="submit">
+      <i class="fa fa-search"></i>
+    </button>
+    <input
+      type="search"
+      class="search"
+      placeholder="חפש/י ספר או מחבר/ת"
+      name="s"
+    />
+  </form>
+</div>
+<a href="/<%=cat %>/<%=id %>/nesCaffe">edit this book</a>
+<div style="width: 90%" class="container">
+  <div class="di">
+    <b
+      class="shadow"
+      style="
+        font-family: 'Bangers', cursive;
+        font-size: 45px;
+        padding-right: 3%;
+        color: antiquewhite;
+      "
+    >
+      <%= chosenBook.writer %> - <%= chosenBook.name %>
+    </b>
+    <div class="row">
+      <div id="cap" class="caption shadow col-lg-4 col-md-5 col-sm-12">
+        <img style="height: 500px" src="<%= chosenBook.img %>" />
+        <br />
+        <b>ז'אנר:</b> <%= chosenBook.category %>
+        <br />
+        <%= chosenBook.price %>
+      </div>
+      <!--col div-->
+      <div
+        style="margin-top: 3%; padding-left: 15%; padding-right: 5%"
+        class="sumP col-lg-8 col-md-7 col-sm-12"
+      >
+        <b
+          class="shadow"
+          style="font-size: 33px; color: antiquewhite; text-align: right"
+        >
+          תקציר</b
+        >
+        <hr />
+        <div class="summary">
+          <b style="font-size: 23px"><%= chosenBook.summary %></b>
+        </div>
+        <button
+          onclick="fu()"
+          class="pay"
+          style="
+            width: 30%;
+            height: 50px;
+            font-size: 26px;
+            margin-top: 10%;
+            margin-bottom: 10%;
+          "
+        >
+          להזמנת ספר
+        </button>
+        <div style="display: none" class="row payment">
+          <p style="text-align: right; font-size: 23px">
+            להזמנת הספר יש להעביר את סכום הכסף הנדרש באחת מהאפליקציות הבאות
+            <br />
+            <b>סכום הכסף הנדרש = </b> מחיר הספר/ים + מחיר המשלוח (19 שקלים)
+            <br />
+            שימו לב! בקניית 2 עד 3 ספרים (לא פחות ולא יותר) תינתן הנחה של 50%
+            הנחה על המשלוח והוא יהפוך ל 9 שקלים
+            <br />
+            <b>הערה חשובה:</b> לאחר ששילמתם את הסכום הדרוש, יש למלא את פרטיכם
+            בקישור הבא כדי לסיים את ההזמנה
+            <br />
+            ללא מילוי הפרטים בקישור זה לא תוכלו לקבל את הספר
+            <br />
+            <b
+              ><a href="/<%=cat%>/<%=id%>/orders"
+                >לחצו כאן כדי למלא את פרטי ההזמנה לאחר ששילמתם</a
+              ></b
+            >
+          </p>
+          <div class="lin col-lg-8 col-md-7 col-sm-12">
+            <a
+              href="https://play.google.com/store/apps/details?id=com.pepper.ldb
+          "
+              ><img
+              src="https://upload.wikimedia.org/wikipedia/he/8/82/PepperLogo.png"
+            </a>
+            <a
+              href="https://play.google.com/store/apps/details?id=com.bnhp.payments.paymentsapp
+
+          "
+              ><img
+              src="https://lh3.googleusercontent.com/BN__QKzD-D7qsfgRFvLoDmGjGs8mdOvgxtZdYvvPhLKIfOXf7o5lT6xM_JzdiIJDeHpR"
+            </a>
+            <a
+              href="https://play.google.com/store/apps/details?id=com.payboxapp
+
+          "
+              ><img
+              src="https://images.maariv.co.il/image/upload/f_auto,fl_lossy/c_fill,g_faces:center,h_380,w_500/558895"
+            </a>
+          </div>
+        </div>
+      </div>
+      <!--col div-->
+    </div>
+  </div>
+  <!--row div-->
+  <%if (chosenBook.series){%>
+  <div class="shadow" style="margin-top: 45px">
+    <b style="font-size: 36px; font-family: 'Bangers', cursive">
+      עוד ספרים מאת <%=chosenBook.writer%></b
+    >
+    <br />
+    <div
+      class="row text-center"
+      style="display: flex; flex-wrap: wrap; position: relative"
+    >
+      <% ser.forEach(function(book){ if(chosenBook.name != book.name){ %>
+      <div class="col-lg-3 col-md-6 col-sm-12 thumbnail">
+        <a href="/<%=cat%>/<%=book._id%>">
+          <img id="image" src="<%=book.img %>" />
+          <div class="caption">
+            <p>
+              <b><%= book.name %> </b>
+              <br />
+              <%= book.writer %>
+            </p>
+          </div>
+        </a>
+      </div>
+      <% }})%>
+    </div>
+  </div>
+  <% }%>
+</div>
+<!--div container-->
+<%-include("parts/footer") %>

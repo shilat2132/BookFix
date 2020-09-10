@@ -1,0 +1,126 @@
+#homeDiv {
+  text-align: center;
+  padding-top: 5%;
+  text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1),
+    0px 18px 23px rgba(0, 0, 0, 0.1);
+}
+#homeP {
+  line-height: 65px;
+  padding-left: 20%;
+  font-weight: 500;
+  text-align: center;
+  width: 900px;
+  font-size: 27px;
+}
+#homeDiv h1 {
+  font-weight: 700;
+  font-size: 5em;
+}
+
+hr {
+  width: 400px;
+  border: 1px solid black;
+}
+.navbar-inverse .navbar-nav > li > a,
+.navbar-inverse .navbar-brand {
+  color: antiquewhite;
+  font-family: "Fondamento";
+}
+
+.navbar-inverse .navbar-brand {
+  font-size: 25px;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  font-size: 20px;
+  text-align: right;
+}
+
+body {
+  /* background: url(https://image.freepik.com/free-photo/red-book-with-blank-cover-table_92795-281.jpg);
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover;*/
+  padding-top: 70px;
+}
+
+html {
+  height: 100%;
+}
+#bs-nav-demo {
+  margin-right: 45px;
+}
+.row {
+  font-family: "Fondamento";
+  color: black;
+}
+.search {
+  width: 70%;
+  border-radius: 15px;
+  text-align: right;
+  height: 45px;
+}
+
+@media only screen and (max-width: 600px) {
+  form {
+    /* display: contents; */
+    width: 100%;
+  }
+  .container {
+    width: 100%;
+    font-size: 0.5em;
+    /* display: contents; */
+  }
+  /* #homeP {
+    font-size: 70%;
+  } */
+}
+
+form {
+  text-align: right;
+  font-size: 20px;
+}
+button {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: antiquewhite;
+  height: 41px;
+  border-radius: 150px;
+  /* width: 4%; */
+}
+
+.lin a img {
+  /* width: 50%; */
+  height: 150px;
+  /* padding-left: 7%; */
+  border-radius: 10px;
+}
+.lin a {
+  width: 20%;
+  float: right;
+}
+.thumbnail {
+  border: none;
+}
+.c img {
+  border-radius: 20px;
+  margin-top: 6%;
+  height: 250px;
+  width: 98%;
+  float: right;
+}
+/* .c {
+  float: right;
+} */
+.centered {
+  position: absolute;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 38px;
+  color: black;
+}
+#i {
+  margin-left: 10%;
+}

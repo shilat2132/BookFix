@@ -1,0 +1,116 @@
+<%-include("parts/header") %>
+<!--vars: arrBooks-->
+<script>
+  function fu() {
+    var payment = document.querySelector(".payment");
+    if (payment.style.display == "block") {
+      payment.style.display = "none";
+    } else {
+      payment.style.display = "block";
+    }
+  }
+</script>
+<div class="container">
+  <form class="form-inline" action="/search/b/book" method="POST">
+    <button type="submit">
+      <i class="fa fa-search"></i>
+    </button>
+    <input
+      type="search"
+      class="search"
+      placeholder="חפש/י ספר או מחבר/ת"
+      name="s"
+    />
+  </form>
+</div>
+<div style="margin: 0 auto" class="row container" id="homeDiv">
+  <h1>BookFix</h1>
+  <hr />
+  <p id="homeP">
+    אצלנו ניתן לרכוש ספרים יד שנייה במצב טוב! התשלום ייעשה על ידי העברה בנקאית
+    בלבד להזמנת ספרים
+    <br />
+  </p>
+  <div class="or">
+    <button onclick="fu()" style="width: 20%; font-size: 26px">
+      להזמנת ספר
+    </button>
+    <div style="margin-bottom: 5%" class="payment">
+      <p style="font-size: 23px; line-height: 60px">
+        להזמנת הספר יש להעביר את סכום הכסף הנדרש באחת מהאפליקציות הבאות
+        <br />
+        <b>סכום הכסף הנדרש = </b> מחיר הספר/ים + מחיר המשלוח (19 שקלים)
+        <br />
+        שימו לב! בקניית 2 עד 3 ספרים (לא פחות ולא יותר) תינתן הנחה של 50% הנחה
+        על המשלוח והוא יהפוך ל 9 שקלים
+        <br />
+        <b>הערה חשובה:</b> לאחר ששילמתם את הסכום הדרוש, יש למלא את פרטיכם בקישור
+        הבא כדי לסיים את ההזמנה
+        <br />
+        ללא מילוי הפרטים בקישור זה לא תוכלו לקבל את הספר
+        <br />
+        <b
+          ><a href="/h/h/orders"
+            >לחצו כאן כדי למלא את פרטי ההזמנה לאחר ששילמתם</a
+          ></b
+        >
+      </p>
+      <div class="lin row">
+        <a
+          class="col-lg-4 col-md-6 col-sm-12 thumbnail"
+          href="https://play.google.com/store/apps/details?id=com.pepper.pay&gl=IL
+      "
+          ><img src="https://www.payapp.co.il/images/pay.png" />
+        </a>
+        <a
+          class="col-lg-3 col-md-4 col-sm-6 thumbnail"
+          href="https://play.google.com/store/apps/details?id=com.bnhp.payments.paymentsapp
+    
+        "
+          ><img
+            src="https://lh3.googleusercontent.com/BN__QKzD-D7qsfgRFvLoDmGjGs8mdOvgxtZdYvvPhLKIfOXf7o5lT6xM_JzdiIJDeHpR"
+          />
+        </a>
+        <a
+          style="width: 12%; margin-right: 4%"
+          class="col-lg-3 col-md-4 col-sm-6 thumbnail"
+          href="https://play.google.com/store/apps/details?id=com.payboxapp
+    
+        "
+          ><img
+            style="height: 121px; margin-top: 10%"
+            src="https://images.maariv.co.il/image/upload/f_auto,fl_lossy/c_fill,g_faces:center,h_380,w_500/558895"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+  <h1 style="text-align: right; font-size: 40px">קטגוריות</h1>
+  <div id="i">
+    <a class="col-lg-6 col-md-6 col-sm-12 thumbnail c" href="/romance"
+      ><img src="https://s3.amazonaws.com/mypen/profiles/26206/1_160.jpg" />
+      <div class="centered">רומנטיקה</div>
+    </a>
+    <a class="col-lg-6 col-md-6 col-sm-12 thumbnail c" href="/fantasy"
+      ><img
+        src="https://images.wallpaperscraft.com/image/pegasus_horse_magic_flowers_4777_1920x1080.jpg"
+      />
+      <div class="centered">פנטזיה</div>
+    </a>
+    <a class="col-lg-6 col-md-6 col-sm-12 thumbnail c" href="/horror"
+      ><img src="https://wallpapercave.com/wp/5r6jdqL.jpg" />
+      <div style="color: white" class="centered">מתח / אימה</div>
+    </a>
+    <a class="col-lg-6 col-md-6 col-sm-12 thumbnail c" href="/english"
+      ><img
+        src="https://cdn.babamail.co.il/Files/2012/6/10/16e681bb-7842-485e-bfaf-b8cbcc6cbfa5.jpg"
+      />
+      <div style="color: white" class="centered">אנגלית</div>
+    </a>
+    <a class="col-lg-6 col-md-6 col-sm-12 thumbnail c" href="/reference"
+      ><img src="http://www.yo-yoo.co.il/pics/uploads/19a004.jpg" />
+      <div class="centered">עיון</div>
+    </a>
+  </div>
+</div>
+<%-include("parts/footer") %>

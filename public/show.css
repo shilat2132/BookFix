@@ -1,0 +1,101 @@
+.navbar-inverse .navbar-nav > li > a,
+.navbar-inverse .navbar-brand {
+  color: antiquewhite;
+  font-family: "Fondamento";
+}
+
+.navbar-inverse .navbar-brand {
+  font-size: 25px;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  font-size: 20px;
+  text-align: right;
+}
+body {
+  padding-top: 70px;
+}
+.search {
+  width: 70%;
+  border-radius: 15px;
+  text-align: right;
+  height: 45px;
+}
+form {
+  text-align: right;
+}
+button {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: antiquewhite;
+  height: 41px;
+  border-radius: 150px;
+  width: 4%;
+}
+.container {
+  text-align: right;
+  font-size: 20px;
+}
+hr {
+  margin-top: 5px;
+  border: 1px solid #17a2b8;
+  width: 30%;
+  margin-right: 0px;
+}
+
+.sumP {
+  font-family: "Gentium Book Basic", serif;
+}
+
+.di {
+  border-radius: 35px;
+  background: #9cecfb; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #0052d4,
+    #65c7f7,
+    #9cecfb
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #0052d4,
+    #65c7f7,
+    #9cecfb
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.thumbnail {
+  border: none;
+  text-align: center;
+  width: 20%;
+  margin-bottom: 10%;
+  height: 250px;
+}
+.caption {
+  text-align: center;
+}
+#cap {
+  font-size: 26px;
+  font-weight: bold;
+}
+.shadow {
+  text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1),
+    0px 18px 20px rgba(0, 0, 0, 0.1);
+}
+.thumbnail #image {
+  margin: 0 auto;
+  height: 100%;
+  width: 70%;
+}
+
+.lin a img {
+  width: 30%;
+  padding-left: 7%;
+}
+
+img {
+  border-radius: 10px;
+}
+
+#bs-nav-demo {
+  margin-right: 45px;
+}

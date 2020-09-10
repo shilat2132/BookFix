@@ -1,0 +1,46 @@
+<%-include("parts/h") %>
+<!--vars: bookE, cat, id-->
+<form action="/<%=cat%>/<%=bookE._id%>?_method=PUT" method="POST">
+    <h2>edit this <%=bookE.name%> book</h2>
+    <div class="form-group">
+      <select class="form-control" name="book[current]">
+        <option>romance</option>
+        <option>reference</option>
+        <option>fantasy</option>
+        <option>horror</option>
+        <option>english</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <input class="form-control" type="text" value="<%=bookE.name %>" name="book[name]" />
+    </div>    
+    <div class="form-group">
+      <input class="form-control" type="text" value="<%=bookE.writer %>" name="book[writer]" />
+    </div> 
+    <div class="form-group">
+      <input class="form-control" type="text"value="<%=bookE.img %>" name="book[img]" />
+    </div>
+    <div class="form-group">
+      <input class="form-control" type="text" value="<%=bookE.price %>" name="book[price]" />
+    </div>
+    <div class="form-group">
+      <input class="form-control" type="text" value="<%=bookE.category %>" name="book[category]" />
+    </div>
+    <div class="form-group">
+      <textarea class="form-control" name="book[summary]"><%=bookE.summary %></textarea>
+    </div>
+    <div class="form-group">
+      <select class="form-control" name="book[series]"><option value="true">true</option>
+      <option value="false">false</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <input type="submit" class="form-control">
+    </div>
+    </div>
+</form>
+ <form action="/<%=cat %>/<%=id%>?_method=DELETE" method="POST">
+<button class="form-control btn btn-danger">Delete this book</button>
+</form>
+
+<%-include("parts/footer") %>
