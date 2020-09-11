@@ -5,7 +5,7 @@ var bp = require("body-parser");
 var me = require("method-override");
 
 mon
-  .connect("mongodb://localhost:27017/books", {
+  .connect(process.env.MONGODB_URI || "mongodb://localhost:27017/books", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -186,6 +186,10 @@ var or = new mon.Schema({
 });
 
 var Order = mon.model("Order", or);
+
+// if(process.env.NODE_ENV === 'production'){
+
+// }
 
 app.listen(process.env.PORT || 3000, process.env.IP, function () {
   console.log("goodddd");
