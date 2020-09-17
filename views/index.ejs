@@ -18,11 +18,11 @@
   c = "עיון" } else if (cat == "romance"){ var c = "רומנטיקה" } else if (cat ==
   "fantasy"){ var c ="פנטזיה" } else{ var c = "מתח/ אימה" } %>
   <h1 class="cat">ספרי <%= c%></h1>
-  <a href="/<%=cat%>/punchie"
+  <a href="/<%=cat%>/punchie">add a book</a>
   <hr />
   <div
     class="row text-center"
-    style="display: flex; flex-wrap: wrap; position: relative;"
+    style="display: flex; flex-wrap: wrap; position: relative"
   >
     <% catBooks.forEach(function(book){ %>
     <div class="col-lg-3 col-md-4 col-sm-6">
