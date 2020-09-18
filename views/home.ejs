@@ -35,7 +35,7 @@
     <button onclick="fu()" style="width: 20%; font-size: 26px">
       להזמנת ספר
     </button>
-    <div style="margin-bottom: 5%" class="payment">
+    <div style="margin-bottom: 5%; display: none" class="payment">
       <p style="font-size: 23px; line-height: 60px">
         להזמנת הספר יש להעביר את סכום הכסף הנדרש באחת מהאפליקציות הבאות
         <br />
@@ -85,32 +85,44 @@
       </div>
     </div>
   </div>
-  <h1 style="text-align: right; font-size: 40px">קטגוריות</h1>
-  <div id="i">
-    <a class="col-lg-6 col-md-6 col-sm-12 thumbnail c" href="/romance"
-      ><img src="https://s3.amazonaws.com/mypen/profiles/26206/1_160.jpg" />
-      <div class="centered">רומנטיקה</div>
-    </a>
-    <a class="col-lg-6 col-md-6 col-sm-12 thumbnail c" href="/fantasy"
-      ><img
-        src="https://images.wallpaperscraft.com/image/pegasus_horse_magic_flowers_4777_1920x1080.jpg"
-      />
-      <div class="centered">פנטזיה</div>
-    </a>
-    <a class="col-lg-6 col-md-6 col-sm-12 thumbnail c" href="/horror"
-      ><img src="https://wallpapercave.com/wp/5r6jdqL.jpg" />
-      <div style="color: white" class="centered">מתח / אימה</div>
-    </a>
-    <a class="col-lg-6 col-md-6 col-sm-12 thumbnail c" href="/english"
-      ><img
-        src="https://cdn.babamail.co.il/Files/2012/6/10/16e681bb-7842-485e-bfaf-b8cbcc6cbfa5.jpg"
-      />
-      <div style="color: white" class="centered">אנגלית</div>
-    </a>
-    <a class="col-lg-6 col-md-6 col-sm-12 thumbnail c" href="/reference"
-      ><img src="http://www.yo-yoo.co.il/pics/uploads/19a004.jpg" />
-      <div class="centered">עיון</div>
-    </a>
+  <div style="margin-top: 10%">
+    <h1 style="text-align: right; font-size: 40px">קטגוריות</h1>
+    <div id="i">
+      <div class="kat">
+        <a class="col-lg-6 col-md-6 col-sm-12 thumbnail c" href="/romance"
+          ><img src="https://s3.amazonaws.com/mypen/profiles/26206/1_160.jpg" />
+          <div class="centered">רומנטיקה</div>
+        </a>
+      </div>
+      <div class="kat">
+        <a class="col-lg-6 col-md-6 col-sm-12 thumbnail c" href="/fantasy"
+          ><img
+            src="https://images.wallpaperscraft.com/image/pegasus_horse_magic_flowers_4777_1920x1080.jpg"
+          />
+          <div class="centered">פנטזיה</div>
+        </a>
+      </div>
+      <div class="kat">
+        <a class="col-lg-6 col-md-6 col-sm-12 thumbnail c" href="/horror"
+          ><img src="https://wallpapercave.com/wp/5r6jdqL.jpg" />
+          <div style="color: white" class="centered">מתח / אימה</div>
+        </a>
+      </div>
+      <div class="kat">
+        <a class="col-lg-6 col-md-6 col-sm-12 thumbnail c" href="/english"
+          ><img
+            src="https://cdn.babamail.co.il/Files/2012/6/10/16e681bb-7842-485e-bfaf-b8cbcc6cbfa5.jpg"
+          />
+          <div style="color: white" class="centered">אנגלית</div>
+        </a>
+      </div>
+      <div class="kat">
+        <a class="col-lg-6 col-md-6 col-sm-12 thumbnail c" href="/reference"
+          ><img src="http://www.yo-yoo.co.il/pics/uploads/19a004.jpg" />
+          <div class="centered">עיון</div>
+        </a>
+      </div>
+    </div>
   </div>
 </div>
 <%-include("parts/footer") %>

@@ -75,7 +75,10 @@ hr {
 #bs-nav-demo {
   margin-right: 45px;
 }
-
+.ed {
+  width: 50%;
+  margin: 0 auto;
+}
 .thumbnail > img {
   margin: 0 auto;
   height: 100%;
