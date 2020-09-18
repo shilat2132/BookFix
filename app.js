@@ -22,6 +22,17 @@ app.use(bp.urlencoded({ extended: true }));
 app.use(me("_method"));
 
 // ROUTES for orders
+// dbs orders collections
+var or = new mon.Schema({
+  name: String,
+  phone: String,
+  address: String,
+  book: String,
+  payment: String,
+  created: { type: Date, default: Date.now },
+});
+
+var Order = mon.model("Order", or);
 // index page of all the orders
 app.get("/shenip/orders", function (req, res) {
   Order.find({}, function (err, arrOrders) {
@@ -38,6 +49,21 @@ app.get("/:cat/:id/orders", function (req, res) {
   var cat = req.params.cat;
   var id = req.params.id;
   res.render("order", { cat: cat, id: id });
+});
+app.get("/orders", function (req, res) {
+  res.render("order", { cat: "order", id: "or" });
+});
+
+// create an order
+app.post("/order/or", function (req, res) {
+  var newOrder = req.body.order;
+  Order.create(newOrder, function (err, newO) {
+    if (err) {
+      res.send("error");
+    } else {
+      res.redirect("/");
+    }
+  });
 });
 // create an order
 app.post("/:cat/:id", function (req, res) {
@@ -64,7 +90,16 @@ var bo = new mon.Schema({
   summary: String,
   series: Boolean,
 });
-
+// delete order route
+app.delete("/shenip/orders/:id", function (req, res) {
+  Order.findByIdAndRemove(req.params.id, function (err) {
+    if (err) {
+      res.send("u didn't manage to delete this order");
+    } else {
+      res.redirect("/shenip/orders");
+    }
+  });
+});
 var Book = mon.model("Blog", bo);
 
 // ROUTES for books
@@ -178,22 +213,6 @@ app.delete("/:cat/:id", function (req, res) {
     }
   });
 });
-
-// dbs orders collections
-var or = new mon.Schema({
-  name: String,
-  phone: String,
-  address: String,
-  book: String,
-  payment: String,
-  created: { type: Date, default: Date.now },
-});
-
-var Order = mon.model("Order", or);
-
-// if(process.env.NODE_ENV === 'production'){
-
-// }
 
 app.listen(process.env.PORT || 3000, process.env.IP, function () {
   console.log("goodddd");

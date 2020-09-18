@@ -21,7 +21,7 @@
   }
 </style>
 <div
-  style="text-align: right; color: black; text-shadow: none;"
+  style="text-align: right; color: black; text-shadow: none"
   class="container"
 >
   <h1>הזמנות</h1>
@@ -36,6 +36,7 @@
         <th>דרך התשלום</th>
         <th>תאריך ההזמנה</th>
         <th>ההזמנה נשלחה כבר?</th>
+        <th>מחיקת הזמנה</th>
       </tr>
     </thead>
     <tbody>
@@ -48,6 +49,16 @@
         <td><%=or.payment %></td>
         <td><%=or.created.toDateString() %></td>
         <td><input type="checkbox" /></td>
+        <td>
+          <form
+            action="/shenip/orders/<%=or._id%>?_method=DELETE"
+            method="POST"
+          >
+            <button class="btn btn-danger" style="width: 70%">
+              <b>Delete</b>
+            </button>
+          </form>
+        </td>
       </tr>
 
       <% }) %>

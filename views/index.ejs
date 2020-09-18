@@ -20,12 +20,31 @@
   <h1 class="cat">ספרי <%= c%></h1>
   <a href="/<%=cat%>/punchie">add a book</a>
   <hr />
-  <div
+  <div class="container">
+    <% catBooks.forEach(function(book){ %>
+    <a
+      class="kat text-center col-lg-3 col-md-4 col-sm-6 thumbnail c"
+      href="/<%=cat%>/<%=book._id%>"
+      ><img src="<%=book.img %>" />
+      <div class="centered">
+        <p>
+          <b><%= book.name %> </b>
+          <br />
+          <%= book.writer %>
+
+          <br />
+          <%= book.price %>
+        </p>
+      </div>
+    </a>
+    <%})%>
+  </div>
+  <!-- <div
     class="row text-center"
     style="display: flex; flex-wrap: wrap; position: relative"
   >
     <% catBooks.forEach(function(book){ %>
-    <div class="col-lg-3 col-md-4 col-sm-6">
+    <div class="col-lg-3 col-md-4 col-sm-6 thumbnail">
       <a href="/<%=cat%>/<%=book._id%>">
         <div class="thumbnail caption">
           <img src="<%=book.img %>" />
@@ -41,7 +60,7 @@
       </a>
     </div>
     <%})%>
-  </div>
+  </div> -->
 </div>
 
 <%-include("parts/footer") %>

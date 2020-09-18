@@ -1,6 +1,5 @@
 #homeDiv {
   text-align: center;
-  padding-top: 5%;
   text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1),
     0px 18px 23px rgba(0, 0, 0, 0.1);
 }
@@ -16,7 +15,10 @@
   font-weight: 100;
   font-size: 50px;
 }
-
+.kat {
+  margin: 0 auto;
+  margin-right: 10%;
+}
 hr {
   border: 1px solid gray;
 }
@@ -59,16 +61,34 @@ html {
   text-align: right;
   height: 45px;
 }
-
+@media only screen and (min-width: 600px) {
+  .centered {
+    font-size: 37px;
+  }
+}
 @media only screen and (max-width: 600px) {
-  form {
-    /* display: contents; */
+  .c img {
     width: 100%;
+  }
+  .centered {
+    font-size: 3rem;
+  }
+  #homeDiv h1 {
+    font-size: 30px;
+  }
+
+  form {
+    width: 100%;
+  }
+  .search {
+    width: 85%;
+  }
+  form button {
+    width: 10%;
   }
   .container {
     width: 100%;
     font-size: 0.5em;
-    /* display: contents; */
   }
   .or button {
     margin-bottom: 10%;
@@ -76,9 +96,6 @@ html {
   #out {
     margin-top: 10%;
   }
-  /* #homeP {
-    font-size: 70%;
-  } */
 }
 
 form {
@@ -120,12 +137,9 @@ button {
   /* left: 50%; */
   /* height: 40px; */
   /* transform: translate(-50%, -50%); */
-  font-size: 38px;
+  /* font-size: 38px; */
   color: black;
 }
-/* .c {
-  height: 250px;
-} */
 
 #i {
   margin-left: 10%;

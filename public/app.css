@@ -37,8 +37,8 @@
 .thumbnail {
   border: none;
   height: 250px;
-  margin-top: 20%;
-  margin-bottom: 55%;
+  margin-top: 5%;
+  margin-bottom: 10%;
 }
 
 body {
@@ -79,9 +79,18 @@ hr {
   width: 50%;
   margin: 0 auto;
 }
-.thumbnail > img {
-  margin: 0 auto;
-  height: 100%;
+.centered {
+  position: relative;
+  line-height: 1.7;
+  color: black;
+}
+@media only screen and (min-width: 600px) {
+  .centered {
+    font-size: 20px;
+  }
+}
+.c > img {
+  height: 110%;
   width: 70%;
   border-radius: 10px;
 }
