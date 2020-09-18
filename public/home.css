@@ -13,13 +13,12 @@
   font-size: 27px;
 }
 #homeDiv h1 {
-  font-weight: 700;
-  font-size: 5em;
+  font-weight: 100;
+  font-size: 50px;
 }
 
 hr {
-  width: 400px;
-  border: 1px solid black;
+  border: 1px solid gray;
 }
 .navbar-inverse .navbar-nav > li > a,
 .navbar-inverse .navbar-brand {
@@ -112,7 +111,7 @@ button {
   border-radius: 20px;
   margin-top: 6%;
   height: 250px;
-  width: 98%;
+  width: 94%;
   float: right;
 }
 
