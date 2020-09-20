@@ -2,25 +2,107 @@
   text-align: center;
   text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1),
     0px 18px 23px rgba(0, 0, 0, 0.1);
-}
-#homeP {
-  line-height: 65px;
-  padding-left: 20%;
-  font-weight: 500;
-  text-align: center;
-  width: 900px;
-  font-size: 27px;
+  margin: 0 auto;
 }
 #homeDiv h1 {
   font-weight: 100;
   font-size: 50px;
+  margin: 0px;
 }
-.kat {
-  margin: 0 auto;
-  margin-right: 10%;
+#homeDiv h3 {
+  text-align: center;
+  color: gray;
+  margin: 0px;
 }
+.payment {
+  margin-bottom: 10%;
+  display: none;
+}
+
+.payment p {
+  font-size: 23px;
+  line-height: 60px;
+}
+.b,
+.b img {
+  height: 150px;
+}
+
+.h h1 {
+  text-align: right;
+  font-size: 40px;
+  font-weight: 700;
+}
+
 hr {
   border: 1px solid gray;
+}
+
+.row {
+  font-family: "Fondamento";
+  color: black;
+}
+.search {
+  width: 70%;
+  border-radius: 15px;
+  text-align: right;
+  height: 45px;
+}
+@media only screen and (min-width: 600px) {
+  .centered {
+    font-size: 37px;
+  }
+  .banks {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .centered {
+    font-size: 3rem;
+  }
+  .b,
+  .b img {
+    height: 100px;
+    float: left;
+  }
+
+  #homeDiv h1 {
+    font-size: 30px;
+  }
+  .search {
+    width: 85%;
+  }
+  form button {
+    width: 10%;
+  }
+}
+
+form {
+  text-align: right;
+  font-size: 20px;
+}
+button {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: antiquewhite;
+  border-radius: 150px;
+}
+
+.thumbnail {
+  border: none;
+}
+
+.c img {
+  border-radius: 20px;
+  margin-top: 6%;
+  height: 250px;
+  width: 90%;
+  margin-right: 5%;
+}
+
+.centered {
+  position: relative;
+  color: black;
 }
 .navbar-inverse .navbar-nav > li > a,
 .navbar-inverse .navbar-brand {
@@ -38,110 +120,5 @@ hr {
 }
 
 body {
-  /* background: url(https://image.freepik.com/free-photo/red-book-with-blank-cover-table_92795-281.jpg);
-  background-position: center; 
-  background-repeat: no-repeat; 
-  background-size: cover;*/
   padding-top: 70px;
-}
-
-html {
-  height: 100%;
-}
-#bs-nav-demo {
-  margin-right: 45px;
-}
-.row {
-  font-family: "Fondamento";
-  color: black;
-}
-.search {
-  width: 70%;
-  border-radius: 15px;
-  text-align: right;
-  height: 45px;
-}
-@media only screen and (min-width: 600px) {
-  .centered {
-    font-size: 37px;
-  }
-}
-@media only screen and (max-width: 600px) {
-  .c img {
-    width: 100%;
-  }
-  .centered {
-    font-size: 3rem;
-  }
-  #homeDiv h1 {
-    font-size: 30px;
-  }
-
-  form {
-    width: 100%;
-  }
-  .search {
-    width: 85%;
-  }
-  form button {
-    width: 10%;
-  }
-  .container {
-    width: 100%;
-    font-size: 0.5em;
-  }
-  .or button {
-    margin-bottom: 10%;
-  }
-  #out {
-    margin-top: 10%;
-  }
-}
-
-form {
-  text-align: right;
-  font-size: 20px;
-}
-button {
-  background-color: #007bff;
-  border-color: #007bff;
-  color: antiquewhite;
-  height: 41px;
-  border-radius: 150px;
-  /* width: 4%; */
-}
-
-.lin a img {
-  /* width: 50%; */
-  height: 150px;
-  /* padding-left: 7%; */
-  border-radius: 10px;
-}
-.lin a {
-  width: 20%;
-  float: right;
-}
-.thumbnail {
-  border: none;
-}
-.c img {
-  border-radius: 20px;
-  margin-top: 6%;
-  height: 250px;
-  width: 94%;
-  float: right;
-}
-
-.centered {
-  position: relative;
-  /* left: 50%; */
-  /* height: 40px; */
-  /* transform: translate(-50%, -50%); */
-  /* font-size: 38px; */
-  color: black;
-}
-
-#i {
-  margin-left: 10%;
-  text-align: center;
 }
