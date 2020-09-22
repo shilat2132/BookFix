@@ -24,17 +24,32 @@
   </form>
 </div>
 <a href="/<%=cat %>/<%=id %>/nesCaffe">edit this book</a>
-<div style="width: 90%" class="container">
+<div class="container">
   <div class="di">
-    <b
-      class="shadow"
-      style="
-        font-family: 'Bangers', cursive;
-        font-size: 45px;
-        padding-right: 3%;
-        color: antiquewhite;
-      "
-    >
+    <b class="shadow dib">
+      <%= chosenBook.writer %> - <%= chosenBook.name %>
+    </b>
+    <div class="book">
+      <img src="<%= chosenBook.img %>" />
+      <div class="centered">
+        <p>
+          <b><%= chosenBook.category %> </b>
+
+          <br />
+          <%= chosenBook.price %>
+        </p>
+      </div>
+    </div>
+    <div class="summary">
+      <hr class="sum" />
+      <h1>תקציר</h1>
+      <hr class="sum" />
+    </div>
+  </div>
+</div>
+<!-- <div class="container">
+  <div class="di">
+    <b class="shadow dib">
       <%= chosenBook.writer %> - <%= chosenBook.name %>
     </b>
     <div class="row">
@@ -45,7 +60,6 @@
         <br />
         <%= chosenBook.price %>
       </div>
-      <!--col div-->
       <div
         style="margin-top: 3%; padding-left: 15%; padding-right: 5%"
         class="sumP col-lg-8 col-md-7 col-sm-12"
@@ -73,8 +87,8 @@
         >
           להזמנת ספר
         </button>
-        <div style="display: none" class="row payment">
-          <p style="text-align: right; font-size: 23px">
+        <div class="row payment">
+          <p>
             להזמנת הספר יש להעביר את סכום הכסף הנדרש באחת מהאפליקציות הבאות
             <br />
             <b>סכום הכסף הנדרש = </b> מחיר הספר/ים + מחיר המשלוח (19 שקלים)
@@ -82,23 +96,23 @@
             שימו לב! בקניית 2 עד 3 ספרים (לא פחות ולא יותר) תינתן הנחה של 50%
             הנחה על המשלוח והוא יהפוך ל 9 שקלים
             <br />
-            <b>הערה חשובה:</b> לאחר ששילמתם את הסכום הדרוש, יש למלא את פרטיכם
-            בקישור הבא כדי לסיים את ההזמנה
-            <br />
-            ללא מילוי הפרטים בקישור זה לא תוכלו לקבל את הספר
-            <br />
             <b
-              ><a href="/<%=cat%>/<%=id%>/orders"
+              >הערה חשובה: לאחר ששילמתם את הסכום הדרוש, יש למלא את פרטיכם בקישור
+              הבא כדי לסיים את ההזמנה
+              <br />
+              ללא מילוי הפרטים בקישור זה לא תוכלו לקבל את הספר
+              <br />
+
+              <a href="/<%=cat%>/<%=id%>/orders"
                 >לחצו כאן כדי למלא את פרטי ההזמנה לאחר ששילמתם</a
               ></b
             >
           </p>
           <div class="lin col-lg-8 col-md-7 col-sm-12">
             <a
-              href="https://play.google.com/store/apps/details?id=com.pepper.ldb
+              href="https://play.google.com/store/apps/details?id=com.pepper.pay&gl=IL
           "
-              ><img
-              src="https://upload.wikimedia.org/wikipedia/he/8/82/PepperLogo.png"
+              ><img src="https://www.payapp.co.il/images/pay.png"
             </a>
             <a
               href="https://play.google.com/store/apps/details?id=com.bnhp.payments.paymentsapp
@@ -112,15 +126,13 @@
 
           "
               ><img
-              src="https://images.maariv.co.il/image/upload/f_auto,fl_lossy/c_fill,g_faces:center,h_380,w_500/558895"
+              src="https://www.hon.co.il/wp-content/uploads/2019/09/%D7%A4%D7%99%D7%99%D7%91%D7%95%D7%A7%D7%A1.png"
             </a>
           </div>
         </div>
       </div>
-      <!--col div-->
     </div>
   </div>
-  <!--row div-->
   <%if (chosenBook.series){%>
   <div class="shadow" style="margin-top: 45px">
     <b style="font-size: 36px; font-family: 'Bangers', cursive">
@@ -148,6 +160,5 @@
     </div>
   </div>
   <% }%>
-</div>
-<!--div container-->
+</div> -->
 <%-include("parts/footer") %>

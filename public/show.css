@@ -20,6 +20,7 @@ body {
   border-radius: 15px;
   text-align: right;
   height: 45px;
+  font-size: 20px;
 }
 form {
   text-align: right;
@@ -28,41 +29,55 @@ button {
   background-color: #007bff;
   border-color: #007bff;
   color: antiquewhite;
-  height: 41px;
   border-radius: 150px;
-  width: 4%;
 }
 .container {
   text-align: right;
-  font-size: 20px;
 }
 hr {
-  margin-top: 5px;
   border: 1px solid #17a2b8;
   width: 30%;
   margin-right: 0px;
 }
+.payment {
+  margin-bottom: 10%;
+  display: none;
+}
 
+.payment p {
+  font-size: 23px;
+}
 .sumP {
   font-family: "Gentium Book Basic", serif;
 }
-
-.di {
-  border-radius: 35px;
-  background: #9cecfb; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #0052d4,
-    #65c7f7,
-    #9cecfb
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #0052d4,
-    #65c7f7,
-    #9cecfb
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+hr h1 {
+  margin: 0px;
 }
+.sum {
+  width: 100%;
+  margin-top: 5px;
+  border: 1px solid gray;
+}
+.centered {
+  position: relative;
+  line-height: 1.7;
+  color: black;
+  text-align: center;
+}
+.book {
+  margin-left: 40%;
+  margin-top: 3%;
+  width: 20%;
+}
+.book img {
+  height: 360px;
+}
+/* .di {
+  border-radius: 35px;
+  background: #9cecfb;
+  background: -webkit-linear-gradient(to right, #0052d4, #65c7f7, #9cecfb);
+  background: linear-gradient(to right, #0052d4, #65c7f7, #9cecfb);
+} */
 .thumbnail {
   border: none;
   text-align: center;
@@ -72,6 +87,11 @@ hr {
 }
 .caption {
   text-align: center;
+}
+.dib {
+  font-family: "Bangers", cursive;
+  font-size: 45px;
+  padding-right: 3%;
 }
 #cap {
   font-size: 26px;
@@ -98,4 +118,29 @@ img {
 
 #bs-nav-demo {
   margin-right: 45px;
+}
+
+@media only screen and (min-width: 600px) {
+  .centered {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .search {
+    width: 85%;
+  }
+  form button {
+    width: 10%;
+  }
+  .c {
+    width: 50%;
+    float: left;
+  }
+  .thumbnail {
+    height: 170px;
+    margin-bottom: 25%;
+  }
+  .c > img {
+    width: 79%;
+  }
 }
