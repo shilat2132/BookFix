@@ -34,6 +34,9 @@ button {
 .container {
   text-align: right;
 }
+.bodycontainer {
+  margin-bottom: 10%;
+}
 hr {
   border: 1px solid #17a2b8;
   width: 30%;
@@ -41,20 +44,43 @@ hr {
 }
 .payment {
   margin-bottom: 10%;
+  font-family: "Fondamento";
+
   display: none;
+}
+.bold {
+  font-size: 30px;
 }
 
 .payment p {
-  font-size: 23px;
+  font-size: 25px;
+  line-height: 50px;
+  text-align: center;
 }
-.sumP {
+.sump {
   font-family: "Gentium Book Basic", serif;
+  font-size: 25px;
+  display: none;
+  margin-bottom: 5%;
+  margin-right: 2%;
+  margin-left: 10%;
+  line-height: 50px;
+  text-align: center;
 }
-hr h1 {
+.taksir {
   margin: 0px;
 }
+
+.sumButton {
+  border: none;
+  background-color: white;
+  color: black;
+  font-size: 35px;
+}
+
 .sum {
-  width: 100%;
+  width: 90%;
+  margin-right: 2%;
   margin-top: 5px;
   border: 1px solid gray;
 }

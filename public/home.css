@@ -17,8 +17,11 @@
 .payment {
   margin-bottom: 10%;
   display: none;
+  font-family: "Fondamento";
 }
-
+.bold {
+  font-size: 30px;
+}
 .payment p {
   font-size: 23px;
   line-height: 60px;
