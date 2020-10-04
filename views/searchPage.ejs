@@ -35,32 +35,9 @@
     </a>
     <%}})%>
   </div>
-  <!-- <div
-    class="row text-center"
-    style="display: flex; flex-wrap: wrap; position: relative;"
-  >
-    <% arrBooks.forEach(function(book){ if(book.name.includes(s) ||
-    book.writer.includes(s)) { bo = true %>
-    <div class="col-lg-3 col-md-4 col-sm-6">
-      <a href="/search/<%=book._id%>">
-        <div class="thumbnail caption">
-          <img src="<%=book.img %>" />
-          <p>
-            <b><%= book.name %> </b>
-            <br />
-            <%= book.writer %>
-
-            <br />
-            <%= book.price %>
-          </p>
-        </div>
-      </a>
-    </div>
-    <%}})%>
-  </div> -->
 
   <% if (!bo){ %>
-  <h2 id="no">:לא נמצאו תוצאות עבור <%=s %></h2>
+  <h2 id="no">לא נמצאו תוצאות עבור <%=s %></h2>
   <%}%>
 </div>
 
