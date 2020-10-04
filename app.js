@@ -28,7 +28,6 @@ var or = new mon.Schema({
   phone: String,
   address: String,
   book: String,
-  payment: String,
   created: { type: Date, default: Date.now },
 });
 

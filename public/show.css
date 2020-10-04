@@ -25,38 +25,22 @@ body {
 form {
   text-align: right;
 }
-button {
+#searchButton {
   background-color: #007bff;
   border-color: #007bff;
   color: antiquewhite;
   border-radius: 150px;
+  height: 34px;
+  width: 34px;
 }
 .container {
   text-align: right;
 }
-.bodycontainer {
-  margin-bottom: 10%;
-}
-hr {
-  border: 1px solid #17a2b8;
-  width: 30%;
-  margin-right: 0px;
-}
-.payment {
-  margin-bottom: 10%;
-  font-family: "Fondamento";
-
-  display: none;
-}
-.bold {
-  font-size: 30px;
+.bodycontainer,
+.bottomcontainer {
+  margin-bottom: 5%;
 }
 
-.payment p {
-  font-size: 25px;
-  line-height: 50px;
-  text-align: center;
-}
 .sump {
   font-family: "Gentium Book Basic", serif;
   font-size: 25px;
@@ -67,18 +51,21 @@ hr {
   line-height: 50px;
   text-align: center;
 }
-.taksir {
-  margin: 0px;
+.order a {
+  margin-right: 3%;
 }
-
 .sumButton {
   border: none;
   background-color: white;
-  color: black;
+}
+.order a,
+.sumButton {
   font-size: 35px;
+  color: black;
 }
 
-.sum {
+hr,
+.order hr {
   width: 90%;
   margin-right: 2%;
   margin-top: 5px;
@@ -98,52 +85,34 @@ hr {
 .book img {
   height: 360px;
 }
-/* .di {
-  border-radius: 35px;
-  background: #9cecfb;
-  background: -webkit-linear-gradient(to right, #0052d4, #65c7f7, #9cecfb);
-  background: linear-gradient(to right, #0052d4, #65c7f7, #9cecfb);
-} */
+
 .thumbnail {
   border: none;
   text-align: center;
   width: 20%;
   margin-bottom: 10%;
-  height: 250px;
 }
-.caption {
-  text-align: center;
+.c img,
+.c {
+  height: 210px;
 }
 .dib {
   font-family: "Bangers", cursive;
   font-size: 45px;
   padding-right: 3%;
 }
-#cap {
-  font-size: 26px;
-  font-weight: bold;
+#morebooks {
+  font-size: 36px;
+  font-family: "Bangers", cursive;
+  font-weight: 900;
 }
 .shadow {
   text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1),
     0px 18px 20px rgba(0, 0, 0, 0.1);
 }
-.thumbnail #image {
-  margin: 0 auto;
-  height: 100%;
-  width: 70%;
-}
-
-.lin a img {
-  width: 30%;
-  padding-left: 7%;
-}
 
 img {
   border-radius: 10px;
-}
-
-#bs-nav-demo {
-  margin-right: 45px;
 }
 
 @media only screen and (min-width: 600px) {
@@ -155,8 +124,27 @@ img {
   .search {
     width: 85%;
   }
+  .centered p {
+    width: 100%;
+  }
   form button {
     width: 10%;
+  }
+  .book img {
+    height: 250px;
+  }
+  .book {
+    margin-left: 27%;
+  }
+  .order a,
+  .sumButton {
+    font-size: 18px;
+  }
+  .dib {
+    font-size: 28px;
+  }
+  #morebooks {
+    font-size: 22px;
   }
   .c {
     width: 50%;

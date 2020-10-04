@@ -1,22 +1,8 @@
 <%-include("parts/showh") %>
 <!--vars: cat, id, ser, chosenBook, arrBooks -->
 <script>
-  function fu() {
-    var payment = document.querySelector(".payment");
-    var arroworder = document.querySelector(".arroworder");
-    if (payment.style.display == "block") {
-      arroworder.classList.remove("fa-chevron-up");
-      arroworder.classList.add("fa-chevron-down");
-      payment.style.display = "none";
-    } else {
-      arroworder.classList.remove("fa-chevron-down");
-      arroworder.classList.add("fa-chevron-up");
-      payment.style.display = "block";
-    }
-  }
   function taks() {
     var sump = document.querySelector(".sump");
-
     var arrow = document.querySelector(".arrow");
 
     if (sump.style.display == "none") {
@@ -32,7 +18,7 @@
 </script>
 <div class="container">
   <form class="form-inline" action="/search/b/book" method="POST">
-    <button type="submit">
+    <button id="searchButton" type="submit">
       <i class="fa fa-search"></i>
     </button>
     <input
@@ -57,11 +43,13 @@
 
           <br />
           <%= chosenBook.price %>
+          <br />
+          מחיר משלוח: 10₪
         </p>
       </div>
     </div>
     <div class="summary">
-      <button class="sumButton" onclick="taks()" class="taksir">
+      <button class="sumButton" onclick="taks()">
         תקציר
         <i
           style="font-size: 0.5em"
@@ -69,98 +57,35 @@
           aria-hidden="true"
         ></i>
       </button>
-      <hr class="sum" />
+      <hr />
       <div class="sump">
         <b><%= chosenBook.summary %></b>
       </div>
     </div>
     <div class="order">
-      <button class="sumButton" onclick="fu()">
-        להזמנת ספר
-        <i
-          style="font-size: 0.5em"
-          class="fa fa-chevron-down arroworder"
-          aria-hidden="true"
-        ></i>
-      </button>
-      <hr class="sum" />
-      <div class="row payment">
-        <p>
-          להזמנת הספר יש להעביר את סכום הכסף הנדרש באחת מהאפליקציות הבאות
-          <br />
-          <b>סכום הכסף הנדרש = </b> מחיר הספר/ים + מחיר המשלוח (19 שקלים)
-          <br />
-          שימו לב! בקניית 2 עד 3 ספרים (לא פחות ולא יותר) תינתן הנחה של 50% הנחה
-          על המשלוח והוא יהפוך ל 9 שקלים
-          <br />
-          <span class="bold"
-            ><b
-              >הערה חשובה: לאחר ששילמתם את הסכום הדרוש, יש למלא את פרטיכם בקישור
-              הבא כדי לסיים את ההזמנה
-              <br />
-              ללא מילוי הפרטים בקישור זה לא תוכלו לקבל את הספר
-              <br />
-
-              <a href="/<%=cat%>/<%=id%>/orders"
-                >לחצו כאן כדי למלא את פרטי ההזמנה לאחר ששילמתם</a
-              ></b
-            ></span
-          >
-        </p>
-        <div class="lin col-lg-8 col-md-7 col-sm-12">
-          <a
-            href="https://play.google.com/store/apps/details?id=com.pepper.pay&gl=IL
-        "
-            ><img src="https://www.payapp.co.il/images/pay.png" />
-          </a>
-          <a
-            href="https://play.google.com/store/apps/details?id=com.bnhp.payments.paymentsapp
-
-        "
-            ><img
-              src="https://lh3.googleusercontent.com/BN__QKzD-D7qsfgRFvLoDmGjGs8mdOvgxtZdYvvPhLKIfOXf7o5lT6xM_JzdiIJDeHpR"
-            />
-          </a>
-          <a
-            href="https://play.google.com/store/apps/details?id=com.payboxapp
-
-        "
-            ><img
-              src="https://www.hon.co.il/wp-content/uploads/2019/09/%D7%A4%D7%99%D7%99%D7%91%D7%95%D7%A7%D7%A1.png"
-            />
-          </a>
-        </div>
-      </div>
+      <a href="/<%=cat%>/<%=id%>/orders">להזמנת ספר</a>
+      <hr />
     </div>
   </div>
 </div>
-
-  <%if (chosenBook.series){%>
-  <div class="shadow" style="margin-top: 45px">
-    <b style="font-size: 36px; font-family: 'Bangers', cursive">
-      עוד ספרים מאת <%=chosenBook.writer%></b
+<!-- more books -->
+<%if (chosenBook.series){%>
+<div class="container bottomcontainer shadow">
+  <p id="morebooks">עוד ספרים מאת <%=chosenBook.writer%></p>
+  <div class="container">
+    <% ser.forEach(function(book){ if (chosenBook.name != book.name){ %>
+    <a
+      href="/<%=cat%>/<%=book._id%>"
+      class="col-lg-3 col-md-4 col-sm-6 thumbnail c"
     >
-    <br />
-    <div
-      class="row text-center"
-      style="display: flex; flex-wrap: wrap; position: relative"
-    >
-      <% ser.forEach(function(book){ if(chosenBook.name != book.name){ %>
-      <div class="col-lg-3 col-md-6 col-sm-12 thumbnail">
-        <a href="/<%=cat%>/<%=book._id%>">
-          <img id="image" src="<%=book.img %>" />
-          <div class="caption">
-            <p>
-              <b><%= book.name %> </b>
-              <br />
-              <%= book.writer %>
-            </p>
-          </div>
-        </a>
-      </div>
-      <% }})%>
-    </div>
+      <img src="<%=book.img%>" />
+      <p class="centered">
+        <b><%=book.name %></b>
+        <br />
+        <b><%=book.price %></b>
+      </p>
+    </a>
+    <% }}) %>
   </div>
-  <% }%>
-</div> 
-<%-include("parts/footer") %>
+</div>
+<% }%> <%-include("parts/footer") %>

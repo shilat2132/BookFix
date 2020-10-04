@@ -37,6 +37,7 @@ body {
   color: #007bff;
   padding-top: 70px;
 }
+
 .search {
   width: 70%;
   border-radius: 15px;
@@ -63,10 +64,6 @@ hr {
   border: 1px solid #007bff;
 }
 
-.ed {
-  width: 50%;
-  margin: 0 auto;
-}
 .centered {
   position: relative;
   line-height: 1.7;
