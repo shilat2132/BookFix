@@ -77,12 +77,10 @@ hr,
   color: black;
   text-align: center;
 }
-.book {
-  margin-left: 40%;
-  margin-top: 3%;
-  width: 20%;
-}
+
 .book img {
+  margin-right: 40%;
+  margin-top: 3%;
   height: 360px;
 }
 
@@ -124,8 +122,9 @@ img {
   .search {
     width: 85%;
   }
-  .centered p {
-    width: 100%;
+
+  .pCentered {
+    margin-right: 29%;
   }
   form button {
     width: 10%;
@@ -149,12 +148,10 @@ img {
   .c {
     width: 50%;
     float: left;
-  }
-  .thumbnail {
     height: 170px;
-    margin-bottom: 25%;
+    margin-bottom: 42%;
   }
   .c > img {
-    width: 79%;
+    height: 168px;
   }
 }

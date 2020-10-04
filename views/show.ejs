@@ -37,16 +37,14 @@
     </b>
     <div class="book">
       <img src="<%= chosenBook.img %>" />
-      <div class="centered">
-        <p>
-          <b><%= chosenBook.category %> </b>
+      <p class="centered pCentered">
+        <b><%= chosenBook.category %> </b>
 
-          <br />
-          <%= chosenBook.price %>
-          <br />
-          מחיר משלוח: 10₪
-        </p>
-      </div>
+        <br />
+        <%= chosenBook.price %>
+        <br />
+        מחיר משלוח: 10₪
+      </p>
     </div>
     <div class="summary">
       <button class="sumButton" onclick="taks()">
