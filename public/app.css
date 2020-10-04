@@ -83,6 +83,9 @@ hr {
   .search {
     width: 85%;
   }
+  .cat {
+    font-size: 28px;
+  }
   form button {
     width: 10%;
   }

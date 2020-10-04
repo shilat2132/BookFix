@@ -15,7 +15,27 @@
 
   <h1 class="cat">מציג תוצאות עבור: <%= s %></h1>
   <hr />
-  <div
+  <div class="container">
+    <% arrBooks.forEach(function(book){ if(book.name.includes(s) ||
+    book.writer.includes(s)) { bo = true %>
+    <a
+      class="kat text-center col-lg-3 col-md-4 col-sm-6 thumbnail c"
+      href="/search/<%=book._id%>"
+      ><img src="<%=book.img %>" />
+      <div class="centered">
+        <p>
+          <b><%= book.name %> </b>
+          <br />
+          <%= book.writer %>
+
+          <br />
+          <%= book.price %>
+        </p>
+      </div>
+    </a>
+    <%}})%>
+  </div>
+  <!-- <div
     class="row text-center"
     style="display: flex; flex-wrap: wrap; position: relative;"
   >
@@ -37,12 +57,10 @@
       </a>
     </div>
     <%}})%>
-  </div>
+  </div> -->
 
   <% if (!bo){ %>
-  <h2 id="no">
-    :לא נמצאו תוצאות עבור <%=s %>
-  </h2>
+  <h2 id="no">:לא נמצאו תוצאות עבור <%=s %></h2>
   <%}%>
 </div>
 

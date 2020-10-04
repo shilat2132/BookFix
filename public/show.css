@@ -122,6 +122,9 @@ img {
   .search {
     width: 85%;
   }
+  .sump {
+    font-size: 17px;
+  }
 
   .pCentered {
     margin-right: 29%;
