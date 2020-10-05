@@ -41,9 +41,11 @@
         <b><%= chosenBook.category %> </b>
 
         <br />
-        <%= chosenBook.price %>
+        <%= chosenBook.price %>₪
         <br />
         מחיר משלוח: 10₪
+        <br />
+        סה"כ <%= chosenBook.price + 10 %>₪
       </p>
     </div>
     <div class="summary">
@@ -80,7 +82,7 @@
       <p class="centered">
         <b><%=book.name %></b>
         <br />
-        <b><%=book.price %></b>
+        <b><%=book.price %>₪</b>
       </p>
     </a>
     <% }}) %>

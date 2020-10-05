@@ -84,7 +84,7 @@ var bo = new mon.Schema({
   name: String,
   writer: String,
   img: String,
-  price: String,
+  price: Number,
   category: String,
   summary: String,
   series: Boolean,
