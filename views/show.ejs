@@ -17,7 +17,7 @@
   }
 </script>
 <div class="container">
-  <form class="form-inline" action="/search/b/book" method="POST">
+  <form class="form-inline " action="/search/b/book" method="POST">
     <button id="searchButton" type="submit">
       <i class="fa fa-search"></i>
     </button>
@@ -42,10 +42,14 @@
 
         <br />
         <%= chosenBook.price %>₪
-        <br />
+        <!-- <br />
         מחיר משלוח: 10₪
         <br />
-        סה"כ <%= chosenBook.price + 10 %>₪
+        סה"כ <%= chosenBook.price + 10 %>₪ -->
+        <br />
+<div>
+        <%- chosenBook.pay %>
+      </div>
       </p>
     </div>
     <div class="summary">
@@ -63,7 +67,7 @@
       </div>
     </div>
     <div class="order">
-      <a href="/<%=cat%>/<%=id%>/orders">להזמנת ספר</a>
+      <a href="/orders">להזמנת ספר</a>
       <hr />
     </div>
   </div>

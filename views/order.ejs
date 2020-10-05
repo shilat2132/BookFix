@@ -1,5 +1,8 @@
 <%-include("parts/h") %>
-<!--vars: cat, id -->
+<!--vars: arrBooks -->
+<script>
+  // addBook - input, bookOption - book,  addBookButton
+</script>
 <style>
     input[type="text"]::placeholder, textarea::placeholder, input[type="text"], textarea {  
                   
@@ -13,6 +16,14 @@
               .lin a img {
   width: 30%;
   padding-left: 7%;
+}
+.bu{
+  background-color: #007bff;
+        border-color: #007bff;
+        border-radius: 15px;
+        color: antiquewhite; 
+            font-size: 26px;
+            
 }
 .payment {
   font-family: "Gentium Book Basic", serif;
@@ -30,7 +41,12 @@
                 font-size: 15px;
 
               }
-}
+              .addBookButton {
+    width: 16%;
+  }
+               }
+               
+
 
              
               
@@ -72,34 +88,42 @@
         </a>
       </div>
     </div>
-  <form class="container" style="width: 90%; " action="/<%=cat%>/<%=id%>" method="POST">  
+  <form class="container" style="width: 90%; " action="/order/or" method="POST">  
       <div class="form-group">
           <label>שם מלא</label>
         <input class="form-control" type="text" placeholder="שם מלא" name="order[name]" required />
       </div> 
       <div class="form-group">
         <label>מספר פלאפון</label>
-        <input style="text-align: right;" class="form-control" type="tel" placeholder="מספר פלאפון" name="order[phone]" required />
+        <input style="text-align: right;" class="form-control" type="tel" maxlength="10" placeholder="מספר פלאפון" name="order[phone]" required />
       </div>
       <div class="form-group">
         <label>כתובת שאליה ישלח הספר (כולל עיר)</label>
         <input class="form-control" type="text" placeholder="כתובת" name="order[address]" required />
       </div>
+        <div class="form-group ">
+        <input class="form-control addBook" style="width: 100%; text-align: right;" list="books" name="books">
+        <datalist id="books">
+          <% arrBooks.forEach(function(boo){ %>
+            <option class="bookOption" value="<%=boo.name%> - <%=boo.writer%> ">
+            <% }) %>
+        </datalist>
+        <button style="font-size: 14px; " class="bu addBookButton">הוסף</button>
+
+      </div>
+
+      
       <div class="form-group">
         <label>שם הספר/ים</label>
-        <textarea class="form-control" placeholder="שם הספר/ים" name="order[book]" required></textarea>
+        <textarea class="form-control booklist" placeholder="שם הספר/ים" name="order[book]" required readonly></textarea>
       </div>
    
     
     
       <div class="form-group">
-        <button style="background-color: #007bff;
-        border-color: #007bff;
-        border-radius: 15px;
-        color: antiquewhite; width: 30%;
-            height: 50px;
-            font-size: 26px;
-            margin-left: 70%;" type="submit" class="form-control">הזמן</button>
+        <button style="width: 30%;
+        height: 50px;             margin-left: 70%;
+" type="submit" class=" bu">הזמן</button>
       </div>
     
       </div>

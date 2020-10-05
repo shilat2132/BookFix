@@ -27,7 +27,7 @@ var or = new mon.Schema({
   name: String,
   phone: String,
   address: String,
-  book: String,
+  // book: String,
   created: { type: Date, default: Date.now },
 });
 
@@ -44,13 +44,14 @@ app.get("/shenip/orders", function (req, res) {
 });
 //create an order
 //get a create order page
-app.get("/:cat/:id/orders", function (req, res) {
-  var cat = req.params.cat;
-  var id = req.params.id;
-  res.render("order", { cat: cat, id: id });
-});
 app.get("/orders", function (req, res) {
-  res.render("order", { cat: "order", id: "or" });
+  Book.find({}, function (err, arrBooks) {
+    if (err) {
+      res.send("error");
+    } else {
+      res.render("order", { arrBooks: arrBooks });
+    }
+  });
 });
 
 // create an order
@@ -64,23 +65,11 @@ app.post("/order/or", function (req, res) {
     }
   });
 });
-// create an order
-app.post("/:cat/:id", function (req, res) {
-  var cat = req.params.cat;
-  var id = req.params.id;
-  var newOrder = req.body.order;
-  Order.create(newOrder, function (err, newO) {
-    if (err) {
-      res.send("error");
-    } else {
-      res.redirect("/" + cat + "/" + id);
-    }
-  });
-});
 
 //dbs book collection
 var bo = new mon.Schema({
   current: String,
+  pay: String,
   name: String,
   writer: String,
   img: String,
