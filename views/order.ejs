@@ -56,7 +56,7 @@
   <hr />
     <div class="row payment">
       <p class="container">
-        להזמנת הספר יש להעביר את סכום הכסף הנדרש באחת מהאפליקציות הבאות
+        להזמנת הספר יש להעביר את סכום הכסף הנדרש באחת מהאפליקציות הבאות למספר 0528799399
         <br />
         <b>סכום הכסף הנדרש = </b> מחיר הספר/ים + מחיר המשלוח (10 שקלים)
         <br />
@@ -88,7 +88,7 @@
         </a>
       </div>
     </div>
-  <form class="container" style="width: 90%; " action="/order/or" method="POST">  
+  <form class="container" style="width: 90%; " action="/order/or" method="POST" >  
       <div class="form-group">
           <label>שם מלא</label>
         <input class="form-control" type="text" placeholder="שם מלא" name="order[name]" required />
@@ -105,7 +105,7 @@
         <input class="form-control addBook" style="width: 100%; text-align: right;" list="books" name="books">
         <datalist id="books">
           <% arrBooks.forEach(function(boo){ %>
-            <option class="bookOption" value="<%=boo.name%> - <%=boo.writer%> ">
+            <option class="bookOption" value="<%=boo.writer%> - <%=boo.name%> ">
             <% }) %>
         </datalist>
         <button style="font-size: 14px; " class="bu addBookButton">הוסף</button>

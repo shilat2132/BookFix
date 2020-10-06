@@ -22,10 +22,10 @@ body {
   height: 45px;
   font-size: 20px;
 }
-.buyForm {
+.payDiv form {
   height: 100px;
 }
-.buyForm input {
+.payDiv input {
   margin-bottom: 45%;
   height: 26px;
 }
@@ -124,7 +124,7 @@ img {
   .centered {
     font-size: 20px;
   }
-  .buyForm input {
+  .payDiv input {
     margin-right: 5%;
   }
 }
