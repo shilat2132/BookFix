@@ -23,15 +23,17 @@ body {
   font-size: 20px;
 }
 .payDiv form {
-  height: 100px;
+  height: 30px;
 }
 .payDiv input {
-  margin-bottom: 45%;
   height: 26px;
+  margin-bottom: 45%;
 }
+
 form {
   text-align: right;
 }
+
 #searchButton {
   background-color: #007bff;
   border-color: #007bff;
@@ -125,12 +127,22 @@ img {
     font-size: 20px;
   }
   .payDiv input {
-    margin-right: 5%;
+    margin-right: 4%;
+  }
+  .wid input {
+    width: 10.5%;
   }
 }
 @media only screen and (max-width: 600px) {
   .search {
     width: 85%;
+  }
+  .payDiv {
+    margin-left: 7%;
+  }
+  .wid input {
+    width: 52%;
+    height: 28px;
   }
   .sump {
     font-size: 17px;
