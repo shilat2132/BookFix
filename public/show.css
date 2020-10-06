@@ -27,6 +27,8 @@ body {
 }
 .payDiv input {
   height: 26px;
+}
+.wid input {
   margin-bottom: 45%;
 }
 
@@ -126,22 +128,13 @@ img {
   .centered {
     font-size: 20px;
   }
-  .payDiv input {
-    margin-right: 4%;
-  }
-  .wid input {
-    width: 10.5%;
-  }
 }
 @media only screen and (max-width: 600px) {
   .search {
     width: 85%;
   }
-  .payDiv {
-    margin-left: 7%;
-  }
+
   .wid input {
-    width: 52%;
     height: 28px;
   }
   .sump {

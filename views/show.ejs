@@ -17,7 +17,7 @@
   }
 </script>
 <div class="container">
-  <form class="form-inline " action="/search/b/book" method="POST">
+  <form class="form-inline" action="/search/b/book" method="POST">
     <button id="searchButton" type="submit">
       <i class="fa fa-search"></i>
     </button>
@@ -73,9 +73,12 @@
         <!-- <br />
         מחיר משלוח: 8₪ -->
         <br />
-<div class="payDiv ">
-        <%- chosenBook.pay %>
-        <form class="wid"
+      </p>
+    </div>
+    <div class="payDiv">
+      <%- chosenBook.pay %>
+      <form
+        class="wid"
         target="paypal"
         action="https://www.paypal.com/cgi-bin/webscr"
         method="post"
@@ -101,8 +104,6 @@
           height="1"
         />
       </form>
-      </div>
-      </p>
     </div>
     <div class="summary">
       <button class="sumButton" onclick="taks()">
