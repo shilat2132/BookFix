@@ -99,6 +99,7 @@ app.get("/", function (req, res) {
 // index route
 app.get("/:cat", function (req, res) {
   var cat = req.params.cat;
+
   Book.find({ current: cat }, function (err, foundCategory) {
     if (err) {
       res.send("there is an eror " + err);
