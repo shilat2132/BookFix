@@ -112,6 +112,10 @@ app.get("/:cat", function (req, res) {
   });
 });
 
+app.get("/contact/detailes", function (req, res) {
+  res.render("contact");
+});
+
 //CREATE ROUTES
 //get create route
 app.get("/:cat/punchie", function (req, res) {
