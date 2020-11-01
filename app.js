@@ -7,7 +7,7 @@ var me = require("method-override");
 mon
   .connect(
     process.env.MONGODB_URI ||
-      "mongodb+srv://user:user@cluster0.xelap.mongodb.net/<dbname>?retryWrites=true&w=majority",
+      "mongodb+srv://user:user@cluster0.xelap.mongodb.net/<books>?retryWrites=true&w=majority",
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -21,51 +21,6 @@ app.use(express.static("public"));
 app.use(bp.urlencoded({ extended: true }));
 app.use(me("_method"));
 
-// ROUTES for orders
-// dbs orders collections
-// var or = new mon.Schema({
-//   name: String,
-//   phone: String,
-//   address: String,
-//   // book: String,
-//   created: { type: Date, default: Date.now },
-// });
-
-// var Order = mon.model("Order", or);
-// // index page of all the orders
-// app.get("/shenip/orders", function (req, res) {
-//   Order.find({}, function (err, arrOrders) {
-//     if (err) {
-//       res.send("error");
-//     } else {
-//       res.render("ordersMe", { ors: arrOrders });
-//     }
-//   });
-// });
-// //create an order
-// //get a create order page
-// app.get("/orders", function (req, res) {
-//   Book.find({}, function (err, arrBooks) {
-//     if (err) {
-//       res.send("error");
-//     } else {
-//       res.render("order", { arrBooks: arrBooks });
-//     }
-//   });
-// });
-
-// // create an order
-// app.post("/order/or", function (req, res) {
-//   var newOrder = req.body.order;
-//   Order.create(newOrder, function (err, newO) {
-//     if (err) {
-//       res.send("error");
-//     } else {
-//       res.redirect("/");
-//     }
-//   });
-// });
-
 //dbs book collection
 var bo = new mon.Schema({
   current: String,
@@ -78,16 +33,7 @@ var bo = new mon.Schema({
   summary: String,
   series: Boolean,
 });
-// delete order route
-app.delete("/shenip/orders/:id", function (req, res) {
-  Order.findByIdAndRemove(req.params.id, function (err) {
-    if (err) {
-      res.send("u didn't manage to delete this order");
-    } else {
-      res.redirect("/shenip/orders");
-    }
-  });
-});
+
 var Book = mon.model("Blog", bo);
 
 // ROUTES for books
