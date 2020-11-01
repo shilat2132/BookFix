@@ -7,7 +7,7 @@ var me = require("method-override");
 mon
   .connect(
     process.env.MONGODB_URI ||
-      "mongodb+srv://user:user@cluster0.xelap.mongodb.net/<books>?retryWrites=true&w=majority",
+      "mongodb+srv://user:user@cluster0.xelap.mongodb.net/<dbname>?retryWrites=true&w=majority",
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
