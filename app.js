@@ -21,6 +21,57 @@ app.use(express.static("public"));
 app.use(bp.urlencoded({ extended: true }));
 app.use(me("_method"));
 
+var or = new mon.Schema ({
+  name: String,
+  phone: Number,
+  address: String,
+  books: String,
+  date: { type: Date, default: Date.now }
+
+})
+
+var Order = mon.model ("Order", or)
+//index orders
+app.get("/orders/index", function(req, res){
+  Order.find({}, function(err, arr){
+    if(err){
+      res.send("error")
+    }
+    else{
+      res.render("ordersMe", {arr: arr})
+    }
+  })
+})
+
+//post orders
+app.post("/:cat/:id/orders", function(req, res){
+  var newOrder = req.body.order
+  var id = req.params.id
+  var cat = req.params.cat
+
+  Order.create(newOrder, function(err, ne){
+    if(err){
+      res.send("error")
+    }
+    else{
+      res.redirect("/" + cat + "/" + id)
+    }
+  })
+})
+
+// delete order
+app.delete("/shenip/orders/:id", function(req, res){
+  var id = req.params.id
+  Order.findByIdAndDelete(id, function(err){
+    if(err){
+      res.send("error")
+    }
+    else{
+      res.redirect("/orders/index")
+    }
+  })
+})
+
 //dbs book collection
 var bo = new mon.Schema({
   current: String,
@@ -39,7 +90,7 @@ var Book = mon.model("Blog", bo);
 // ROUTES for books
 //home route
 app.get("/", function (req, res) {
-  res.render("home");
+  res.render("ho");
 });
 
 // index route

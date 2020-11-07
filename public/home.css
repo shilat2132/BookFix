@@ -70,7 +70,7 @@ hr {
     width: 85%;
   }
   form button {
-    width: 10%;
+    width: 12%;
   }
 }
 
@@ -79,9 +79,9 @@ form {
   font-size: 20px;
 }
 button {
-  background-color: #007bff;
-  border-color: #007bff;
-  color: antiquewhite;
+  background-color: plum;
+  border-color: plum;
+  color: white;
   border-radius: 150px;
 }
 
@@ -89,21 +89,13 @@ button {
   border: none;
 }
 
-/* .c img {
-  border-radius: 20px;
-  margin-top: 6%;
-  height: 250px;
-  width: 100%;
-  margin-right: 5%;
-} */
-
 .centered {
   position: relative;
   color: black;
 }
 .navbar-inverse .navbar-nav > li > a,
 .navbar-inverse .navbar-brand {
-  color: antiquewhite;
+  color: white;
   font-family: "Fondamento";
 }
 

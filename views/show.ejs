@@ -15,6 +15,32 @@
       arrow.classList.add("fa-chevron-down");
     }
   }
+function pay() {
+  var button = document.querySelector(".bankbutton");
+  var form = document.querySelector(".ban");
+  if (form.style.display == "none"){
+    form.style.display = "block"
+    button.textContent = "סגור"
+  }
+  else{
+    form.style.display = "none"
+    button.textContent = "העברה בנקאית"
+  }
+
+}
+function paycredit() {
+  var button = document.querySelector(".creditbutton");
+  var form = document.querySelector(".creditcard");
+  if (form.style.display == "none"){
+    form.style.display = "block"
+    button.textContent = "סגור"
+  }
+  else{
+    form.style.display = "none"
+    button.textContent = "תשלום באשראי"
+  }
+
+}
 </script>
 <div class="container">
   <form class="form-inline" action="/search/b/book" method="POST">
@@ -45,8 +71,13 @@
         <br />
       </p>
     </div>
-    <div class="payDiv">
+    <div style="margin-bottom: 5%;" class="payDiv ">
+      <button onclick="paycredit()" class="creditbutton btn bg-success">תשלום באשראי</button>
+      <div class="row creditcard">
+        <div class="shop col-lg-6 col-md-6 col-sm-6">
       <%- chosenBook.pay %>
+    </div>
+    <div class="shop col-lg-6 col-md-6 col-sm-6">
       <form
         class="wid"
         target="paypal"
@@ -74,6 +105,49 @@
           height="1"
         />
       </form>
+    </div>
+
+    </div>
+    <div style="margin-top: 4%;" class="bankpay">
+      <button onclick="pay()" class="bankbutton btn bg-success">העברה בנקאית </button>
+      <div class="ban">
+        <div style="font-weight: 900; line-height: 1.7; font-size: 20px; margin-bottom: 10%;" class="note">:ניתן לשלם דרך האפליקציות 
+          <br>
+          pay, paybox, bit
+          <br>
+          השאירו את פרטיכם בטופס הבא, ונחזור אליכם בהקדם האפשרי
+          <br>
+          <span style="font-size: 16px;">(תצטרכו לשלם רק אחרי שנחזור אליכם)</span>
+          <br>
+          <br>
+          לשאלות או פרטים נוספים, כתבו לנו אל המספר
+          052-8799399
+        </div>
+      <form class="bankait" action="/<%=cat%>/<%=id%>/orders" method="POST">
+        <div class="form-group">
+          <label>שם מלא</label>
+          <input class="form-control" type="text" name="order[name] " placeholder="שם מלא" required>
+        </div>
+        <div class="form-group">
+          <label>פלאפון </label>
+          <input class="form-control" type="number"  name="order[phone]" placeholder="פלאפון"  maxlength="10" required>
+        </div>
+        <div class="form-group">
+          <label>כתובת שאליה ישלחו הספרים (כולל עיר)</label>
+          <input class="form-control" type="text" name="order[address]" placeholder="כתובת" required> 
+        </div>
+        <div class="form-group">
+          <label> שם הספר/ים </label>
+          <textarea class="form-control" name="order[books]" required></textarea>
+        </div>
+        <div>ודאו שהזנתם את מספר הפלאפון נכון כדי שנוכל ליצור עמכם קשר</div>
+        <input class=" btn btn-primary" type="submit"  value="הזמן" >
+      </div>
+
+      </form>
+    </div>
+
+    </div>
       <br />
       <strong style="text-align: right; font-size: 17px"
         >שימו לב! לא ניתן לבטל הזמנה לאחר התשלום</strong
@@ -104,7 +178,7 @@
     <% ser.forEach(function(book){ if (chosenBook.name != book.name){ %>
     <a
       href="/<%=cat%>/<%=book._id%>"
-      class="col-lg-3 col-md-4 col-sm-6 thumbnail c"
+      class="col-lg-3 col-md-4 col-sm-6  c"
     >
       <img src="<%=book.img%>" />
       <p class="centered">

@@ -1,5 +1,5 @@
 <%-include("parts/h") %>
-<!--vars: ors-->
+<!--vars: arr-->
 <style>
   table {
     border-collapse: collapse;
@@ -30,24 +30,22 @@
     <table>
       <thead>
         <tr>
-          <th>שם המזמין</th>
+          <th>שם </th>
           <th>פלאפון</th>
           <th>כתובת</th>
           <th>שם הספר/ים</th>
           <th>תאריך ההזמנה</th>
-          <th>ההזמנה נשלחה כבר?</th>
           <th>מחיקת הזמנה</th>
         </tr>
       </thead>
       <tbody>
-        <% ors.forEach(function(or){%>
+        <% arr.forEach(function(or){%>
         <tr>
           <td><%=or.name %></td>
           <td><%=or.phone %></td>
           <td><%=or.address %></td>
-          <td><%=or.book %></td>
-          <td><%=or.created.toDateString() %></td>
-          <td><input type="checkbox" /></td>
+          <td><%=or.books %></td>
+          <td><%=or.date.toDateString() %></td>
           <td>
             <form
               action="/shenip/orders/<%=or._id%>?_method=DELETE"

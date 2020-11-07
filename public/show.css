@@ -1,6 +1,6 @@
 .navbar-inverse .navbar-nav > li > a,
 .navbar-inverse .navbar-brand {
-  color: antiquewhite;
+  color: white;
   font-family: "Fondamento";
 }
 
@@ -22,14 +22,22 @@ body {
   height: 45px;
   font-size: 20px;
 }
-.payDiv form {
-  height: 30px;
+.creditcard form {
+  float: left;
 }
-.payDiv input {
-  height: 26px;
+.creditcard {
+  margin-left: 5%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  display: none;
+}
+.creditcard input {
+  height: 28px;
+  width: 70%;
 }
 .wid input {
-  margin-bottom: 45%;
+  height: 30px;
+  width: 80%;
 }
 
 form {
@@ -37,9 +45,9 @@ form {
 }
 
 #searchButton {
-  background-color: #007bff;
-  border-color: #007bff;
-  color: antiquewhite;
+  background-color: plum;
+  border-color: plum;
+  color: white;
   border-radius: 150px;
   height: 34px;
   width: 34px;
@@ -62,21 +70,15 @@ form {
   line-height: 50px;
   text-align: center;
 }
-.order a {
-  margin-right: 3%;
-}
+
 .sumButton {
   border: none;
   background-color: white;
-}
-.order a,
-.sumButton {
   font-size: 35px;
   color: black;
 }
 
-hr,
-.order hr {
+hr {
   width: 90%;
   margin-right: 2%;
   margin-top: 5px;
@@ -95,12 +97,6 @@ hr,
   height: 360px;
 }
 
-.thumbnail {
-  border: none;
-  text-align: center;
-  width: 20%;
-  margin-bottom: 10%;
-}
 .c img,
 .c {
   height: 210px;
@@ -124,9 +120,28 @@ img {
   border-radius: 10px;
 }
 
+.bankait,
+.bankait input {
+  text-align: right;
+}
+.ban {
+  width: 90%;
+  margin-left: 10%;
+  margin-top: 3%;
+  display: none;
+}
+
 @media only screen and (min-width: 600px) {
   .centered {
     font-size: 20px;
+  }
+  .bottomcontainer .centered {
+    font-size: 20px;
+    margin-left: 50%;
+  }
+
+  .creditcard {
+    margin-left: 75%;
   }
 }
 @media only screen and (max-width: 600px) {
@@ -134,21 +149,21 @@ img {
     width: 85%;
   }
 
-  .wid input {
-    height: 28px;
-  }
   .sump {
     font-size: 17px;
   }
 
   .pCentered {
-    margin-right: 29%;
+    margin-right: 20%;
+    margin-bottom: 15%;
   }
   form button {
     width: 10%;
   }
   .book img {
     height: 250px;
+    margin-right: 30%;
+    margin-top: 10%;
   }
   .book {
     margin-left: 27%;
