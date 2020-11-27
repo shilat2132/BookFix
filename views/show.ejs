@@ -66,10 +66,12 @@ function paycredit() {
         <b><%= chosenBook.category %> </b>
 
         <br />
-        <span style="color: red; text-decoration: line-through;"> <%=Math.round (chosenBook.price * 1.2) %>₪
-        </span>
-        <br>
-        <%= chosenBook.price %>₪
+        <% if (chosenBook.price > 39){%>
+          <span style="color: red; text-decoration: line-through;"> <%= chosenBook.price %>₪</span>
+          <br>
+
+          <%} %>
+          39₪
 
         <br />
       </p>
@@ -114,13 +116,13 @@ function paycredit() {
     <div style="margin-top: 4%;" class="bankpay">
       <button onclick="pay()" class="bankbutton btn bg-success">העברה בנקאית </button>
       <div class="ban">
-        <div style="font-weight: 900; line-height: 1.7; font-size: 20px; margin-bottom: 10%;" class="note">:ניתן לשלם דרך האפליקציות 
+        <div style="font-weight: 900; line-height: 1.7; font-size: 15px; margin-bottom: 10%;" class="note">:ניתן לשלם דרך האפליקציות 
           <br>
           pay, paybox, bit
           <br>
           השאירו את פרטיכם בטופס הבא, ונחזור אליכם בהקדם האפשרי
           <br>
-          <span style="font-size: 16px;">(תצטרכו לשלם רק אחרי שנחזור אליכם)</span>
+          <span style="font-size: 16px;">תצטרכו לשלם רק אחרי שנחזור אליכם</span>
           <br>
           <br>
           לשאלות או פרטים נוספים, כתבו לנו אל המספר
@@ -187,10 +189,12 @@ function paycredit() {
       <p class="centered">
         <b><%=book.name %></b>
         <br />
-        <span style="color: red; text-decoration: line-through;"> <%=Math.round (book.price * 1.2) %>₪
-        </span>
-        <br>
-        <b><%=book.price %>₪</b>
+        <% if (book.price > 39){%>
+          <span style="color: red; text-decoration: line-through;"> <%= book.price %>₪</span>
+          <br>
+
+          <%} %>
+          39₪
       </p>
     </a>
     <% }}) %>
