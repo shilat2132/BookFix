@@ -66,14 +66,11 @@ function paycredit() {
         <b><%= chosenBook.category %> </b>
 
         <br />
-        <% if (chosenBook.price > 39){%>
-          <span style="color: red; text-decoration: line-through;"> <%= chosenBook.price %>₪</span>
-          <br>
-
-          <%} %>
+      
           39₪
 
         <br />
+        <span><b>משלוח: 6₪</b></span>
       </p>
     </div>
     <div style="margin-bottom: 5%;" class="payDiv ">
@@ -189,13 +186,9 @@ function paycredit() {
       <p class="centered">
         <b><%=book.name %></b>
         <br />
-        <% if (book.price > 39){%>
-          <span style="color: red; text-decoration: line-through;"> <%= book.price %>₪</span>
-          <br>
-
-          <%} %>
           39₪
-      </p>
+          <br>
+          <span><b>משלוח: 6₪</b></span>      </p>
     </a>
     <% }}) %>
   </div>

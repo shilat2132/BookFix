@@ -21,56 +21,52 @@ app.use(express.static("public"));
 app.use(bp.urlencoded({ extended: true }));
 app.use(me("_method"));
 
-var or = new mon.Schema ({
+var or = new mon.Schema({
   name: String,
   phone: Number,
   address: String,
   books: String,
-  date: { type: Date, default: Date.now }
+  date: { type: Date, default: Date.now },
+});
 
-})
-
-var Order = mon.model ("Order", or)
+var Order = mon.model("Order", or);
 //index orders
-app.get("/orders/index", function(req, res){
-  Order.find({}, function(err, arr){
-    if(err){
-      res.send("error")
+app.get("/orders/index", function (req, res) {
+  Order.find({}, function (err, arr) {
+    if (err) {
+      res.send("error");
+    } else {
+      res.render("ordersMe", { arr: arr });
     }
-    else{
-      res.render("ordersMe", {arr: arr})
-    }
-  })
-})
+  });
+});
 
 //post orders
-app.post("/:cat/:id/orders", function(req, res){
-  var newOrder = req.body.order
-  var id = req.params.id
-  var cat = req.params.cat
+app.post("/:cat/:id/orders", function (req, res) {
+  var newOrder = req.body.order;
+  var id = req.params.id;
+  var cat = req.params.cat;
 
-  Order.create(newOrder, function(err, ne){
-    if(err){
-      res.send("error")
+  Order.create(newOrder, function (err, ne) {
+    if (err) {
+      res.send("error");
+    } else {
+      res.redirect("/" + cat + "/" + id);
     }
-    else{
-      res.redirect("/" + cat + "/" + id)
-    }
-  })
-})
+  });
+});
 
 // delete order
-app.delete("/shenip/orders/:id", function(req, res){
-  var id = req.params.id
-  Order.findByIdAndDelete(id, function(err){
-    if(err){
-      res.send("error")
+app.delete("/shenip/orders/:id", function (req, res) {
+  var id = req.params.id;
+  Order.findByIdAndDelete(id, function (err) {
+    if (err) {
+      res.send("error");
+    } else {
+      res.redirect("/orders/index");
     }
-    else{
-      res.redirect("/orders/index")
-    }
-  })
-})
+  });
+});
 
 //dbs book collection
 var bo = new mon.Schema({
@@ -182,16 +178,17 @@ app.get("/:cat/:id/nesCaffe", function (req, res) {
 
 //update route
 app.put("/:cat/:id", function (req, res) {
-  Book.findByIdAndUpdate(req.params.id, req.body.book, function (
-    err,
-    updatedBook
-  ) {
-    if (err) {
-      res.send("there is an error" + err);
-    } else {
-      res.redirect("/" + req.params.cat + "/" + req.params.id);
+  Book.findByIdAndUpdate(
+    req.params.id,
+    req.body.book,
+    function (err, updatedBook) {
+      if (err) {
+        res.send("there is an error" + err);
+      } else {
+        res.redirect("/" + req.params.cat + "/" + req.params.id);
+      }
     }
-  });
+  );
 });
 
 // delete route
