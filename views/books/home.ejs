@@ -1,0 +1,109 @@
+<%-include("parts/header") %>
+<style>
+/* new ver */
+.catagories img{
+    height: 120px;
+}
+.catagories a{
+margin: 3%
+}
+
+
+    /* old ver */
+   .cat {
+       border-radius: 90px;
+       height: 125px;
+       width: 15%;
+       margin: 5%;
+   }
+   .cat a{
+       color: whitesmoke;
+       text-align: right;
+       font-size: 24px;
+   }
+    hr {
+  border: 1px solid gray;
+}
+
+.logo {
+    text-align: center;
+ 
+  margin: 0 auto;
+  font-family: "Fondamento";
+
+}
+.logo h1{
+    font-weight: 100;
+    text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1),
+    0px 18px 23px rgba(0, 0, 0, 0.1);
+  font-size: 50px;
+  padding-right: 6%;
+
+}
+.logo h3{
+    color: gray;
+}
+.black{
+    color: black;
+}
+.white{
+    color: white;
+}
+#img{
+    height: 25px;
+}
+
+
+
+@media only screen and (max-width: 600px){
+    .logo h1{
+   
+  padding-right: 16%;
+
+}
+.logo{
+    margin-top:17%;
+}
+.row{
+        margin-left: 2%;
+    }
+}
+@media only screen and (min-width: 600px){
+    .row{
+        margin-left: 10%;
+    }
+
+}
+
+
+
+</style>
+
+<div class="container">
+    <div class="logo">
+        <hr />
+             <h1>  <span id="imgspan"><img id="img" src="https://i.ibb.co/sHTW7vZ/download-removebg-preview-1.png"/></span>
+
+                <span class="black">Book</span><span class="white">Fix</span></h1>
+        <h3><b>ספרי יד שנייה</b></h3>
+        <hr />
+    </div>
+   <div class="catagories">
+       <a class="col-lg-6 col-md-12 col-sm-12 romance" href="/רומנטיקה">
+<img src="https://i.ibb.co/LZS0jJJ/20220116-201410-0000.png">
+       </a>
+       <a class="col-lg-6 col-md-12 col-sm-12 fantasy" href="/פנטזיה">
+        <img src="https://i.ibb.co/nLZP9bv/20220116-201530-0000.png">
+
+    </a>
+    <a class="col-lg-6 col-md-12 col-sm-12 horror" href="/מתח">
+        <img src="https://i.ibb.co/pj0CN47/20220116-201619-0000.png">
+
+    </a>
+    <a class="col-lg-6 col-md-12 col-sm-12 english" href="/אנגלית">
+        <img src="https://i.ibb.co/pwVzkF2/png-20220116-201718-0000.png">
+
+    </a>
+   </div>
+</div>
+<%-include("parts/footer") %>

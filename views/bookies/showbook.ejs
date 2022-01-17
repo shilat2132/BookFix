@@ -1,0 +1,54 @@
+<%-include("parts/showsthead") %>
+<!-- vars: showedbook, series -->
+<div class="container">
+    <a href="/editbook/<%=showedbook._id%>">עריכת ספר</a>
+    <br>
+    <span class="storyname">
+        <%= showedbook.writer%>
+        - <%= showedbook.name%> 
+
+    </span>
+    <hr class="hr">
+    <img class="showpic" src="    <%= showedbook.img%>    ">
+    <div class="showinfo">
+        39₪
+        <br>
+        <%= showedbook.genere%>
+        <br>
+        <%-showedbook.pay %> 
+    </div>
+    <div style="margin-top: 15%;" class="summary">
+        <span class="tak" > תקציר:</span>
+        <div class="innersum">
+            <%-showedbook.summary%>
+
+        </div>
+        
+    </div>
+
+
+    <div class="seriescol">
+        <span class="morewriter">עוד ספרים מאת <%=showedbook.writer%></span>
+        <hr class="hr">
+        <% series.forEach(function(ser){
+            if(ser.name != showedbook.name){ %>
+                <a class="col-lg-4 col-md-6 col-sm-6 indexlink booksindex" href="/showbook/<%=ser._id%>">
+
+                    <img class="indexpic" src="<%=ser.img %> ">
+                    <div class="info">
+                      <b>  <%=ser.name %> 
+                        <br>
+                        <%=ser.writer %> 
+    <br>
+    39₪
+    <!-- להוסיף כפתור הוספה להגלה -->
+    </b>
+
+</div>
+    
+                </a>
+
+       <% }}) %>
+    </div>
+</div>
+<%-include("parts/footer") %>

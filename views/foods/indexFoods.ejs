@@ -1,0 +1,25 @@
+<%-include("parts/h") %>
+<div class="container">
+    <a style="font-size: 25px; color: black;" href="/foodCreate">הוספת מתכון</a>
+    <hr>
+    <% arr.forEach(function(food){ %>
+        <div class="col-lg-4 col-md-3 col-sm-2">
+            <a href="/catagory/<%=food._id%>">
+                <h4><%=food.name %>  </h4>
+                <br>
+                <%= food.state %>
+                <br>
+                <%= food.catagory %>
+                <br>
+
+            </a>
+           
+            
+        </div>
+       
+    
+    
+    <%}) %>
+
+</div>
+<%-include("parts/footer") %>

@@ -1,0 +1,25 @@
+<%-include("parts/h") %>
+<!-- vars: allsongs -->
+<div class="container">
+    <a style="font-size: 20px; color: black;" href="/createsong">הוספת שיר</a>
+    <hr>
+    <% allsongs.forEach(function(song){ %>
+        <div style="background-color: plum; margin-right: 3%; border-radius: 40px; height: 90px; width: 20%; color: black; float: left;" class="col-lg-4 col-md-3 col-sm-2">
+            <a style="color: black;" href="/showsong/<%=song._id%>">
+                <h4><%=song.name %>  </h4>
+                <br>
+                <%= song.singer %>
+                <br>
+            
+
+            </a>
+           
+            
+        </div>
+       
+    
+    
+    <%}) %>
+
+</div>
+<%-include("parts/footer") %>

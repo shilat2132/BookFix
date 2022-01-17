@@ -1,0 +1,165 @@
+/* general */
+body{
+    direction: rtl;
+        padding-top: 70px;
+        text-align: center;
+
+}
+
+.cart{
+    height: 44px;
+    padding-right: 91px;
+}
+.bottomnav{
+    background-color: #AFEEEE; border-color: #AFEEEE; border-radius: 5px; height: 285px; margin-top: 8%;
+  }
+   .linkt{
+    color: whitesmoke;
+    font-size: 22px;
+    font-family: 'Playfair Display', serif;  }
+
+  .bottomnav span{
+font-family: 'Times New Roman', Times, serif;
+line-height: 25px; 
+font-size: 17px;   }
+
+.navbar-inverse .navbar-nav > li > a,
+.navbar-inverse .navbar-brand {
+color: white;
+font-family: "Fondamento";
+font-size: 15px;
+}
+
+.navbar-inverse .navbar-brand {
+font-size: 25px;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+font-size: 20px;
+text-align: center;
+}
+.hr{
+  width:80%;
+  margin-top: 0px;
+  border:1px solid #AFEEEE ;
+  background-color: #AFEEEE;
+
+}
+
+/* logos */
+.logopic{
+ background-position: center; /* Center the image */
+background-repeat: no-repeat; /* Do not repeat the image */
+background-size: cover;
+height: 200px;
+border-radius: 18px;
+}
+
+.punchie{
+background-image: url(https://i.ibb.co/94tR3V3/20220114-005412-0000.png);
+
+}
+.bookfix{
+background-image: url(https://i.ibb.co/h9NjrDD/20220117-212740-0000.png);
+
+}
+
+/* BOOKFIX HOME */
+.catagorypics{
+    height: 120px;
+    margin-bottom: 6%;
+border-radius: 30px;
+}
+
+/*  BOOKS AND STORIES INDEX */
+.title{
+    font-size: 30px;
+    font-family: 'Alef', sans-serif;
+}
+ .info, .showinfo{
+     text-align: center;
+     color: black;
+ }
+
+.indexpic{
+    height: 290px;
+    border-radius: 18px;
+
+}
+
+.booksindex .info{
+    font-size: 13px;
+
+}
+
+.info{
+    margin-top: 6%;
+}
+
+
+.booksindex .indexpic{
+height: 166px;}
+.booksindex{
+    float: right;
+}
+.indexlink{
+    text-align: center;
+    width: 45%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 5%;
+margin-bottom: 10%;
+
+} 
+
+/* SHOW STORY AND BOOK */
+.showinfo {
+    margin-top: 5%; line-height: 27px; font-size: 16px; font-weight: 700;
+}
+.showpic {
+    height: 170px;
+    margin-top: 3%;
+}
+.storyname{
+    font-size: 22px;
+    font-family: 'Alef', sans-serif;
+
+}
+#summary{
+    direction: rtl;
+
+}
+
+.innersum{
+    line-height: 30px;
+    margin-right: 15px;
+    margin-top: 5%;
+    font-family: 'Secular One', sans-serif;
+    margin-left: 3%;
+    font-size: 18px;
+    text-align: justify;
+
+
+
+
+}
+.tak{
+    font-size: 32px;
+    font-family: 'Alef', sans-serif;
+}
+
+.seriescol{
+    margin-top: 15%;
+}
+
+.morewriter{
+    font-size: 23px;
+    font-family: 'Alef', sans-serif;
+}
+
+.paypic{
+    height: 39px;
+}
+
+
+

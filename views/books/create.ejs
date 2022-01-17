@@ -1,0 +1,51 @@
+<%-include("parts/h") %>
+<div class="container ed">
+<form action="/bookcr" method="POST">
+    <h2>Create a new  book</h2>
+    
+    <div class="form-group">
+      <select class="form-control" name="book[category]">
+        <option>רומנטיקה</option>
+        <option>פנטזיה</option>
+        <option>מתח</option>
+        <option>אנגלית</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <input class="form-control" type="text" placeholder="שם הספר" name="book[name]" />
+    </div>    
+    <div class="form-group">
+      <input class="form-control" type="text" placeholder="מחבר" name="book[writer]" />
+    </div> 
+    <div class="form-group">
+      <select class="form-control" name="book[series]"><option value="true">true</option>
+      <option value="false">false</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <input class="form-control" type="text" placeholder="סוג ספר" name="book[genere]" />
+    </div>
+
+    
+   
+    <div class="form-group">
+      <input class="form-control" type="text" placeholder="כריכה" name="book[img]" />
+    </div>
+   
+    
+    <div class="form-group">
+      <textarea class="form-control" placeholder="תקציר" name="book[summary]"></textarea>
+    </div>
+    <div class="form-group">
+      <textarea class="form-control" placeholder="כפתור תשלום" name="book[pay]"></textarea>
+    </div>
+
+
+  <div class="form-group">
+    <input type="submit" class="form-control">
+  </div>
+
+  </div>
+</form>
+</div>
+<%-include("parts/footer") %>

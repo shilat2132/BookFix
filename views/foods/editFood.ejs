@@ -1,0 +1,49 @@
+<%-include("parts/h") %>
+<!-- vars: editF -->
+<div class="container">
+    <form action="/updateFood/<%=editF._id%>?_method=PUT" method="POST">
+        <h2>עריכת המתכון</h2>
+        <hr>
+        <div class="form-group">
+            <input class="form-control" type="text" value="<%=editF.name%>" name="food[name]" />
+          </div>   
+      <div class="form-group">
+        <select class="form-control" name="food[state]">
+          <option>חלבי</option>
+          <option>בשרי</option>
+          <option>פרווה</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <select class="form-control" name="food[catagory]">
+          <option> מאפים וקינוחים</option>
+          <option>פשטידות</option>
+          <option>צהריים</option>
+          <option>תוספות לארוחות</option>
+          <option>חלבי</option>
+          <option>סלטים</option>
+        </select>
+      </div>
+    
+    <div class="form-group">
+      <textarea class="form-control"  name="food[ingridiants]"><%=editF.ingridiants%></textarea>
+    </div>
+       
+      <div class="form-group">
+        <textarea class="form-control"  name="food[making]"><%=editF.making%></textarea>
+      </div>
+     
+    
+      <div class="form-group">
+        <input type="submit" class="form-control">
+      </div>
+    
+     
+    </form>
+    <form action="/deleteFood/<%=editF._id%>?_method=DELETE" method="POST">
+      <button class="form-control btn btn-danger" >מחיקת מתכון</button>
+      </form>
+  </div>
+
+    <%-include("parts/footer") %>

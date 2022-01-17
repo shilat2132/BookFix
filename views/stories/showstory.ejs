@@ -1,0 +1,106 @@
+<%-include("parts/showsthead") %>
+<!-- vars: showedstory -->
+<script>
+    function explain(){
+        var exp = document.querySelector("#explain")
+        if(exp.style.display =="none"){
+            exp.style.display = "block"
+        } else{
+            exp.style.display = "none"
+        }
+    }
+
+</script>
+<style>
+ 
+
+
+.additional{
+    margin-top: 17%;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 70px;
+
+}
+#bord{
+    border-right: 5px solid #FFFACD;
+    padding-right: 10px;
+}
+
+.innersum b{
+    font-size:20px ;
+}
+
+
+.payimage{
+    height: 60px;
+    padding-top: 10px;
+    text-align: center;
+}
+#digitalg{
+    background-color: #AFEEEE;
+    border: none;
+}
+#explain{
+    direction: rtl;
+    font-size: 13px;
+    line-height: 25px;
+    padding-top: 10px ;
+
+}
+
+
+</style>
+<div class="container">
+    <a  href="/editstory/<%=showedstory._id%>">עריכת ספר</a>
+    <div class="show">
+        <span class="storyname"><%=showedstory.series%> 
+            <br> <%=showedstory.name%> </span>
+        <hr class="hr">
+        <span><%=showedstory.seriesnum%> </span>
+        <br>
+       
+            <img  class="showpic" src="<%=showedstory.fullcover%>">
+        <div class="showinfo"><%=showedstory.writer%>
+            <br>
+            שנת הוצאה: <%=showedstory.year%>
+        <br>
+    ספר דיגיטלי - <%=showedstory.price%>₪
+    </div>
+
+        <div><%-showedstory.paybutton%></div>
+        <div class="digitalexplanation">
+            <button onclick="explain()" id="digitalg">איך קוראים ספר דיגיטלי</button>
+            <div  style="display: none;" id="explain">
+                עד 24 שעות לאחר רכישת הספר, ישלח אליכם במייל קובץ הספר להורדה (לשם כך, עליכם להזין את כתובת המייל שלכם בתשלום)
+                <br>
+                לאחר מכן תצטרכו להוריד את האפליקציה אשר מאפשרת לקרוא ספר דיגיטלי ובתוך האפליקציה, הספר יופיע לכם באופן אוטומטי
+                <br>
+                במייל, יחד עם קובץ הורדת הספר, ישלח אליכם גם קישור לאפליקציה בה קוראים את הספר
+                <br>
+                אם נתקלתם בבעיה, אתם מוזמנים לכתוב לי בעמוד האינסטגרם                 <a href="https://www.instagram.com/bookfix1/">@bookfix1</a>
+                <br>
+                או לשלוח לי מייל לכתובת 
+                <br>
+                shilat2132@gmail.com
+            </div>
+
+        </div>
+
+        <div style="margin-top: 15%;" class="summary">
+            <span  class="tak" > תקציר:</span>
+            <div class="innersum">
+                <%-showedstory.summary%>
+                <div class="additional">
+                    <%-showedstory.additionalinfo%>
+                </div>
+
+            </div>
+            
+        </div>
+
+    </div>
+   
+
+</div>
+
+<%-include("parts/footer") %>

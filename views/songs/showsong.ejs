@@ -1,0 +1,13 @@
+<%-include("parts/h") %>
+<!-- vars: showedsong -->
+<div class="container">
+    <a href="/editsong/<%=showedsong._id%>">עריכת שיר</a>
+    <h2><%=showedsong.name%></h2>
+    <h5><%=showedsong.singer%></h5>
+    <hr>
+    <div style="margin-top: 2%;  float: left; width: 50%; line-height: 40px;" class="container">
+        <%=showedsong.lyrics%>
+    </div>
+
+</div>
+<%-include("parts/footer") %>

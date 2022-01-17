@@ -1,0 +1,50 @@
+<%-include("parts/showsthead") %>
+<div class="container">
+    <form action="/storycr" method="POST">
+        <h2>יצירת ספר אלקטרוני חדש</h2>
+        <div class="form-group">
+            <input class="form-control" type="text" placeholder="שם הספר" name="story[name]" />
+          </div>   
+          <div class="form-group">
+            <input class="form-control" type="text" placeholder="שם הסופר" name="story[writer]" />
+          </div>
+          <div class="form-group">
+            <input class="form-control" type="text" placeholder="שנת הוצאה" name="story[year]" />
+          </div>
+          <div class="form-group">
+          <input class="form-control" type="text" placeholder="כריכה" name="story[cover]" />
+          </div>
+          <div class="form-group">
+            <input class="form-control" type="text" placeholder="כריכה מלאה" name="story[fullcover]" />
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="text" placeholder="סדרה" name="story[series]" />
+              </div>
+              <div class="form-group">
+                <input class="form-control" type="text" placeholder="מספר בסדרה" name="story[seriesnum]" />
+                </div>
+          <div class="form-group">
+          <input class="form-control" type="number" placeholder="מחיר " name="story[price]" />
+          </div>
+          <div class="form-group">
+      <textarea class="form-control" placeholder="כפתור מחיר" name="story[paybutton]"></textarea>
+    </div>
+    <div class="form-group">
+        <textarea class="form-control" placeholder=" תקציר" name="story[summary]"></textarea>
+      </div>
+      <div class="form-group">
+        <textarea class="form-control" placeholder=" מידע נוסף על הספר" name="story[additionalinfo]"></textarea>
+      </div>
+       
+     
+     
+    
+      <div class="form-group">
+        <input type="submit" class="form-control">
+      </div>
+    
+
+    </form>
+</div>
+
+<%-include("parts/footer") %>

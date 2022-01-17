@@ -1,0 +1,54 @@
+<%-include("parts/h") %>
+<!--vars: showedbook-->
+<div class="container ed">
+
+<form  action="/updatebook/<%=showedbook._id%>?_method=PUT" method="POST">
+    <h2>עריכת הספר <%=showedbook.name%></h2>
+    <div class="form-group">
+      <select class="form-control" name="book[category]">
+        <option>רומנטיקה</option>
+        <option>פנטזיה</option>
+        <option>מתח</option>
+        <option>אנגלית</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <input class="form-control" type="text" value="<%=showedbook.name %>" name="book[name]" />
+    </div>    
+    <div class="form-group">
+      <input class="form-control" type="text" value="<%=showedbook.writer %>" name="book[writer]" />
+    </div> 
+    <div class="form-group">
+      <select class="form-control" name="book[series]"><option value="true">true</option>
+      <option value="false">false</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <input class="form-control" type="text" value="<%=showedbook.category %>" name="book[genere]" />
+    </div>
+
+    
+   
+    <div class="form-group">
+      <input class="form-control" type="text"value="<%=showedbook.img %>" name="book[img]" />
+    </div>
+   
+    
+    <div class="form-group">
+      <textarea class="form-control" name="book[summary]"><%=showedbook.summary %></textarea>
+    </div>
+    <div class="form-group">
+      <textarea class="form-control" name="book[pay]"><%=showedbook.pay %></textarea>
+    </div>
+    
+    <div class="form-group">
+      <input type="submit" class="form-control">
+    </div>
+    </div>
+</form>
+ <form action="/deletebook/<%=showedbook._id%>?_method=DELETE" method="POST">
+<button class="form-control btn btn-danger" style="width: 20%;">Delete this book</button>
+</form>
+</div>
+
+<%-include("parts/footer") %>

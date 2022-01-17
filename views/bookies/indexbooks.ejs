@@ -1,0 +1,29 @@
+<%-include("parts/showsthead") %>
+<!-- vars: indexbooks, catagory -->
+<div class="container">
+    <a href="/bookcreate">יצירת ספר</a>
+    <br>
+    <span class="title"> ספרי <%=catagory%></span>
+    <hr class="hr">
+    <div class="index">
+        <% indexbooks.forEach(function(book){ %>
+            <a class="col-lg-4 col-md-6 col-sm-6 indexlink booksindex" href="/showbook/<%=book._id%>">
+
+                <img class="indexpic" src="<%=book.img %> ">
+                <div class="info">
+                  <b>  <%=book.name %> 
+                    <br>
+                    <%=book.writer %> 
+<br>
+39₪
+<!-- להוסיף כפתור הוספה להגלה -->
+</b> </div>
+
+            </a>
+                   
+                   
+            <%}) %>
+    </div>
+
+</div>
+<%-include("parts/footer") %>

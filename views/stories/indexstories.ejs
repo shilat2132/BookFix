@@ -1,0 +1,27 @@
+<%-include("parts/showsthead") %>
+<!-- vars: allstories -->
+
+<div class="container">
+    <!-- <a style="font-size: 20px; color: black;" href="/createstory">הוספת ספר</a> -->
+<div class="logopic punchie"></div>
+<span class="title">הספרים שלי</span>
+    <hr class="hr">
+    <% allstories.forEach(function(story){ %>
+            <a class="indexlink" href="/showstory/<%=story._id%>">
+                <img class="indexpic"  src="<%=story.cover%>"/> 
+                <div class="info"><b>
+                    <%=story.name %> 
+                    <br> 
+                    <%=story.series %> 
+                    <br>
+                    <%=story.price%> ₪
+                </b>
+                </div>
+              
+            
+
+            </a>
+            <%}) %>
+</div>
+
+<%-include("parts/footer") %>
