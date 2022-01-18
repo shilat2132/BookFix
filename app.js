@@ -378,6 +378,7 @@ app.put("/updatebook/:id", function(req, res){
 
 })
 
+// BOOK delete
 app.delete("/deletebook/:id", function(req,res){
   Hand.findByIdAndRemove(req.params.id, function(err){
     if(err){
@@ -388,7 +389,24 @@ app.delete("/deletebook/:id", function(req,res){
   })
 })
 
+// BOOK search
+app.post("/searchbook", function(req, res){
+  var searchinput = req.body.searchinput
+  var booksresults = []
+  Hand.find({}, function(err, searchbooks){
+    if (err){
+      res.send("err")
+    } else{
+      searchbooks.forEach(function(book){
+        if(book.name.includes(searchinput) || book.writer.includes(searchinput) ){
+          booksresults.push(book)
+        }
+      })
+      res.render("bookies/searchpage", {searchinput: searchinput, booksresults:booksresults})
+    }
+  })
 
+})
 
 
 

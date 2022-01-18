@@ -1,0 +1,34 @@
+<%-include("parts/showsthead") %>
+<!-- vars: booksresults, searchinput -->
+<div class="container">
+    <%if (booksresults.length !=0){%>
+        <span class="title"> תוצאות עבור <%=searchinput%> </span>
+        <hr class="hr">
+        <div class="index">
+            <% booksresults.forEach(function(book){ %>
+                <a class="col-lg-4 col-md-6 col-sm-6 indexlink booksindex" href="/showbook/<%=book._id%>">
+    
+                    <img class="indexpic" src="<%=book.img %> ">
+                    <div class="info">
+                      <b>  <%=book.name %> 
+                        <br>
+                        <%=book.writer %> 
+    <br>
+    39₪
+    <!-- להוסיף כפתור הוספה להגלה -->
+    </b> </div>
+    
+                </a>
+                       
+                       
+                <%}) %>
+        </div>
+
+    <%} else{ %>
+        <span class="title"> לא נמצאו תוצאות עבור  <%=searchinput%> </span>
+
+        <%   } %>
+   
+
+</div>
+<%-include("parts/footer") %>

@@ -1,5 +1,6 @@
 <%-include("parts/showsthead") %>
 <!-- vars: showedbook, series -->
+
 <div class="container">
     <a href="/editbook/<%=showedbook._id%>">עריכת ספר</a>
     <br>
@@ -9,15 +10,18 @@
 
     </span>
     <hr class="hr">
-    <img class="showpic" src="    <%= showedbook.img%>    ">
+    <div >
+    <img class="showcover" src="    <%= showedbook.img%>    ">
     <div class="showinfo">
-        39₪
+        39₪  
+
         <br>
         <%= showedbook.genere%>
         <br>
-        <%-showedbook.pay %> 
+        <%-showedbook.pay %>
     </div>
-    <div style="margin-top: 15%;" class="summary">
+</div>
+    <div  class="summary ">
         <span class="tak" > תקציר:</span>
         <div class="innersum">
             <%-showedbook.summary%>
@@ -25,9 +29,10 @@
         </div>
         
     </div>
-
-
-    <div class="seriescol">
+    
+        <% if (showedbook.series){ %>
+            <div style="margin-top: 9%;" class="seriescol">
+                <br>
         <span class="morewriter">עוד ספרים מאת <%=showedbook.writer%></span>
         <hr class="hr">
         <% series.forEach(function(ser){
@@ -48,7 +53,8 @@
     
                 </a>
 
-       <% }}) %>
+       <% }})} %>
+       
     </div>
 </div>
 <%-include("parts/footer") %>

@@ -1,3 +1,116 @@
+/* computer */
+
+@media only screen and (min-width: 600px) {
+    .bottomnav{
+        height: 130px;
+    }
+    .morewriter{
+        font-size: 33px;
+    }
+    .tak{
+        font-size: 32px;
+    }
+   
+    .botdiv{
+        float: right;
+margin-top: 2%;
+margin-left: 5%; 
+padding-right: 10px;
+border-right: 3px solid white;
+}
+.summary{
+    width: 65%;
+margin-right: 20%;
+margin-top: 3%;}
+
+.botcontent{
+    padding-right: 18%;
+}
+.indexpic{
+    height: 270px;}
+
+.title{
+    font-size: 50px;
+}
+.showpic {
+    height: 265px;
+    border-radius: 20px;
+
+   
+}
+.showcover{
+    height: 260px;
+    border-radius: 20px;
+}
+.storyname{
+    font-size: 36px;
+
+}
+.additional{
+    margin-top: 4%;
+  
+
+}
+.searchbar{
+    width: 70%;
+}}
+   
+
+
+/* PHONE */
+@media only screen and (max-width: 600px) {
+    .bottomnav{
+        height: 290px;
+    }
+    .tak{
+        font-size: 24px;
+        font-family: 'Alef', sans-serif;
+    }
+    .additional{
+        margin-top: 17%;
+      
+    
+    }
+    .showpic {
+        height: 165px;
+       
+    }
+    .info{
+        margin-top: 6%;
+    }
+    .morewriter{
+        font-size: 23px;
+    }
+    .botdiv{
+        margin-top: 5%;
+        
+    }
+    .storyname{
+        font-size: 28px;
+    
+    }
+    .indexlink{
+        width: 45%;
+        margin-left: 2%;
+        margin-right: 2%;
+        margin-top: 5%;
+    }
+    .indexpic{
+        height: 190px;}
+        .title{
+            font-size: 30px;
+        
+        }
+        .showcover{
+            height: 260px;
+            border-radius: 20px;
+        }
+        .summary{
+            margin-top: 8%;
+        }
+}
+
+
 /* general */
 body{
     direction: rtl;
@@ -6,16 +119,25 @@ body{
 
 }
 
+.searchsubmit{
+    background-image: url(https://i.ibb.co/ZKJXhLd/project-20220118-1721570-01.png);
+    height: 36px;
+}
+.searchbar{
+    border-radius: 25px;
+    height: 36px;
+
+}
 .cart{
     height: 44px;
-    padding-right: 91px;
 }
 .bottomnav{
-    background-color: #AFEEEE; border-color: #AFEEEE; border-radius: 5px; height: 285px; margin-top: 8%;
+    background-color: #AFEEEE; border-color: #AFEEEE; border-radius: 5px;  margin-top: 8%;
   }
    .linkt{
     color: whitesmoke;
     font-size: 22px;
+    font-weight: 900;
     font-family: 'Playfair Display', serif;  }
 
   .bottomnav span{
@@ -37,6 +159,7 @@ font-size: 25px;
 .navbar-inverse .navbar-nav > li > a {
 font-size: 20px;
 text-align: center;
+font-family: 'Tinos', serif;
 }
 .hr{
   width:80%;
@@ -48,21 +171,15 @@ text-align: center;
 
 /* logos */
 .logopic{
- background-position: center; /* Center the image */
-background-repeat: no-repeat; /* Do not repeat the image */
-background-size: cover;
-height: 200px;
+height: 170px;
 border-radius: 18px;
-}
-
-.punchie{
-background-image: url(https://i.ibb.co/94tR3V3/20220114-005412-0000.png);
+margin-bottom: 5%;
+margin-top: 5%;
 
 }
-.bookfix{
-background-image: url(https://i.ibb.co/h9NjrDD/20220117-212740-0000.png);
 
-}
+
+
 
 /* BOOKFIX HOME */
 .catagorypics{
@@ -73,7 +190,6 @@ border-radius: 30px;
 
 /*  BOOKS AND STORIES INDEX */
 .title{
-    font-size: 30px;
     font-family: 'Alef', sans-serif;
 }
  .info, .showinfo{
@@ -82,7 +198,6 @@ border-radius: 30px;
  }
 
 .indexpic{
-    height: 290px;
     border-radius: 18px;
 
 }
@@ -92,36 +207,39 @@ border-radius: 30px;
 
 }
 
-.info{
-    margin-top: 6%;
+
+
+.index{
+    margin-top: 3%;
 }
 
 
-.booksindex .indexpic{
-height: 166px;}
+
+
 .booksindex{
     float: right;
 }
 .indexlink{
     text-align: center;
-    width: 45%;
-    margin-left: 2%;
-    margin-right: 2%;
-    margin-top: 5%;
 margin-bottom: 10%;
 
 } 
 
 /* SHOW STORY AND BOOK */
+.additional{
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 70px;
+
+}
+
 .showinfo {
     margin-top: 5%; line-height: 27px; font-size: 16px; font-weight: 700;
 }
 .showpic {
-    height: 170px;
     margin-top: 3%;
+    border-radius: 30px;
 }
 .storyname{
-    font-size: 22px;
     font-family: 'Alef', sans-serif;
 
 }
@@ -133,7 +251,6 @@ margin-bottom: 10%;
 .innersum{
     line-height: 30px;
     margin-right: 15px;
-    margin-top: 5%;
     font-family: 'Secular One', sans-serif;
     margin-left: 3%;
     font-size: 18px;
@@ -144,7 +261,6 @@ margin-bottom: 10%;
 
 }
 .tak{
-    font-size: 32px;
     font-family: 'Alef', sans-serif;
 }
 
@@ -153,12 +269,13 @@ margin-bottom: 10%;
 }
 
 .morewriter{
-    font-size: 23px;
     font-family: 'Alef', sans-serif;
 }
 
 .paypic{
     height: 39px;
+    border-radius: 36px;
+    margin-top: 3%;
 }
 
 
