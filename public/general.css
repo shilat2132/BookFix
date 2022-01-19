@@ -280,3 +280,46 @@ margin-bottom: 10%;
 
 
 
+/* SONGS */
+.songinfo{
+       
+    color: black;
+}
+.songdivs{
+    background-color: lavender;
+    width: 39%;
+    float: left;
+    margin: 3%;
+height: 155px;
+padding-top: 27px;
+border-radius: 19px;
+}
+
+.songsinger{
+    font-size: 11px;
+}
+
+.songsin{
+    direction: ltr;
+}
+
+/* FOOD */
+.foodimg{
+    height: 160px;
+    border-radius: 20px;
+}
+
+.fooddivs{
+    width: 42%;
+    float: left;
+    margin: 3%;
+}
+.foodpicin{
+    height: 70px;
+    border-radius: 22px;
+}
+.foodinfo{
+    font-size: 13px;
+    color: black;
+}
+

@@ -1,24 +1,24 @@
-<%-include("parts/h") %>
+<%-include("parts/showsthead") %>
 <!-- vars: allsongs -->
-<div class="container">
-    <a style="font-size: 20px; color: black;" href="/createsong">הוספת שיר</a>
-    <hr>
-    <% allsongs.forEach(function(song){ %>
-        <div style="background-color: plum; margin-right: 3%; border-radius: 40px; height: 90px; width: 20%; color: black; float: left;" class="col-lg-4 col-md-3 col-sm-2">
-            <a style="color: black;" href="/showsong/<%=song._id%>">
-                <h4><%=song.name %>  </h4>
-                <br>
-                <%= song.singer %>
-                <br>
-            
 
+<div class="container songsin">
+    <a style="font-size: 16px; color: black;" href="/createsong">הוספת שיר</a>
+    <hr class="hr">
+    <% allsongs.forEach(function(song){ %>
+        <div class="col-lg-3 col-md-4 col-sm-6 songdivs">
+            <a  href="/showsong/<%=song._id%>">
+
+                <div class="songinfo">
+                  <b class="songname">  <%=song.name %> </b>
+                    <br>
+                    <br>
+                   <span class="songsinger"><%=song.singer %> </span>  
+    
+     </div>
+    
             </a>
-           
-            
         </div>
        
-    
-    
     <%}) %>
 
 </div>

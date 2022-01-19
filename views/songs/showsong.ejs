@@ -1,13 +1,47 @@
-<%-include("parts/h") %>
-<!-- vars: showedsong -->
+<%-include("parts/showsthead") %>
+<!-- vars: showedsong , seriessongs-->
+<style>
+    .songna{
+        font-family: "Fondamento";
+        font-size: 30px;
+    }
+    .lyric{
+        font-family: 'Times New Roman', Times, serif;
+font-size: 18px;
+    }
+</style>
 <div class="container">
     <a href="/editsong/<%=showedsong._id%>">עריכת שיר</a>
-    <h2><%=showedsong.name%></h2>
+    <br>
+    <span class="songna"><%=showedsong.name%></span>
     <h5><%=showedsong.singer%></h5>
-    <hr>
-    <div style="margin-top: 2%;  float: left; width: 50%; line-height: 40px;" class="container">
+    <hr class="hr"> 
+    <div style="margin-top: 2%;  line-height: 40px;" class="container lyric">
         <%=showedsong.lyrics%>
     </div>
+<%if(showedsong.series){%>
+    <div class="moresongs">
+        <span class="morewriter">עוד שירים מאת הזמר</span>
+        <hr class="hr">
+       <% seriessongs.forEach(function(song){
+           if(song.name != showedsong.name) { %>
+            <div class="col-lg-3 col-md-4 col-sm-6 songdivs">
+                <a  href="/showsong/<%=song._id%>">
+    
+                    <div class="songinfo">
+                      <b class="songname">  <%=song.name %> </b>
+                        <br>
+                        <br>
+                       <span class="songsinger"><%=song.singer %> </span>  
+        
+         </div>
+        
+                </a>
+            </div>
+           <% } }) %>
+    </div>
+<%} %>
+   
 
 </div>
 <%-include("parts/footer") %>

@@ -1,0 +1,35 @@
+
+<%-include("parts/showsthead") %>
+<!-- vars: songssresults, searchinput -->
+<div class="container">
+    <%if (songssresults.length !=0){%>
+        <span class="title"> תוצאות עבור <%=searchinput%> </span>
+        <hr class="hr">
+        <div class="index">
+            <% songssresults.forEach(function(song){ %>
+                <div class="col-lg-3 col-md-4 col-sm-6 songdivs">
+                    <a  href="/showsong/<%=song._id%>">
+        
+                        <div class="songinfo">
+                          <b class="songname">  <%=song.name %> </b>
+                            <br>
+                            <br>
+                           <span class="songsinger"><%=song.singer %> </span>  
+            
+             </div>
+            
+                    </a>
+                </div>
+                       
+                       
+                <%}) %>
+        </div>
+
+    <%} else{ %>
+        <span class="title"> לא נמצאו תוצאות עבור  <%=searchinput%> </span>
+
+        <%   } %>
+   
+
+</div>
+<%-include("parts/footer") %>

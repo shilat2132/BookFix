@@ -1,9 +1,31 @@
-<%-include("parts/h") %>
-<!-- vars: currentFood -->
+<%-include("parts/showsthead") %>
+<!-- vars: showedfood -->
 
 <div class="container">
-    <a href="/editFood/<%=currentFood._id%>">עריכת מתכון</a>
-<h2><%=currentFood.name%></h2>
-<hr>
+    <a href="/editFood/<%=showedfood._id%>">עריכת מתכון</a>
+    <br>
+<span class="storyname"><%=showedfood.name%></span>
+<hr class="hr">
+<img class="foodimg" src="<%=showedfood.img%>">
+<div class="showinfo">
+    <%= showedfood.state%>
 </div>
+<div style="margin-bottom: 7%;" class="summary ">
+    <span class="tak" > מצרכים</span>
+    <div class="innersum">
+        <%-showedfood.ingridiants%>
+
+    </div>
+    
+</div>
+<div  class="summary ">
+    <span class="tak" > אופן ההכנה</span>
+    <div class="innersum">
+        <%-showedfood.making%>
+
+    </div>
+    
+</div>
+</div>
+
 <%-include("parts/footer") %>
