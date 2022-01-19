@@ -154,7 +154,7 @@ app.post("/bookcr", function(req, res){
 })
 
 //BOOK index
-app.get("/:catagory", function(req,res){
+app.get("/indexbooks/:catagory", function(req,res){
   Hand.find({catagory: req.params.catagory}, function(err, indexbooks){
     if(err){
       res.send("err")
