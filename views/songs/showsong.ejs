@@ -9,14 +9,17 @@
         font-family: 'Times New Roman', Times, serif;
 font-size: 18px;
     }
+    .son{
+        direction: ltr;
+    }
 </style>
-<div class="container">
+<div class="container son">
     <a href="/editsong/<%=showedsong._id%>">עריכת שיר</a>
     <br>
     <span class="songna"><%=showedsong.name%></span>
     <h5><%=showedsong.singer%></h5>
     <hr class="hr"> 
-    <div style="margin-top: 2%;  line-height: 40px;" class="container lyric">
+    <div style="margin-top: 2%;  line-height: 40px;" class="container lyric linebr">
         <%=showedsong.lyrics%>
     </div>
 <%if(showedsong.series){%>

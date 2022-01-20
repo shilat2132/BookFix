@@ -42,10 +42,13 @@ var story = mon.Schema({
   price: Number,
   paybutton: String,
   summary: String,
-  additionalinfo: String
+  additionalinfo: String,
+  firstchaps: String
 })
 
+
 var Story = mon.model("Story", story)
+
 
 //STORY index
 app.get("/indexstories", function(req, res){
@@ -83,6 +86,21 @@ app.get("/showstory/:id", function(req, res){
     }
   })
 })
+
+// STORY FIRST CHAPTERS
+// app.get("/:id/firstchapters", function (req, res) {
+//   var id = req.params.id
+//   Story.findById(id, function (err, foundbook) {
+//     if(err){
+//       res.send("err")
+//     }
+//     else{
+//       res.render("stories/firstchapters", {foundbook: foundbook})
+//     }
+    
+//   })
+  
+// })
 
 //STORY EDIT AND UPDATE
 app.get("/editstory/:id", function(req, res){

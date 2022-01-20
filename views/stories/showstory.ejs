@@ -10,12 +10,46 @@
         }
     }
 
+    function firstch(){
+        var exp = document.querySelector(".firsts")
+        if(exp.style.display =="none"){
+            exp.style.display = "block"
+        } else{
+            exp.style.display = "none"
+        }
+    }
+    
+
 </script>
 <style>
- 
+ .butto{
+     background-color: lavender;
+     font-weight: 900;
+     height: 47px;
+     padding-top: 10px;
+     font-size: 19px;
+     border-radius: 19px;
+ }
+ .firsts{
+    font-family: 'Noto Sans Hebrew', sans-serif;
+margin-top: 6%;}
 
+    span.“chap” {
+    font-size: 27px;
+    text-align: center;
+}
+span.“tim” {
+    text-align: center;
+    /* font-weight: 900; */
+    margin-top: 3px;
+    font-size: 13px;
+}
 
-
+.innerfirst{
+    font-size: 15.5px;
+    line-height: 2;
+    text-align: justify;
+}
 #bord{
     border-right: 5px solid #FFFACD;
     padding-right: 10px;
@@ -93,7 +127,10 @@
             </div>
             
         </div>
-
+        <div onclick="firstch()" class="butto">קריאת הפרק הראשון</div>
+        <div style="display: none;" class="firsts linebr">
+            <%-showedstory.firstchaps%>
+        </div>
     </div>
    
 

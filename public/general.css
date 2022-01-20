@@ -10,6 +10,10 @@
     .tak{
         font-size: 32px;
     }
+    .firsts{
+        width: 67%;
+    margin-right: 20%;
+    }
    
     .botdiv{
         float: right;
@@ -229,6 +233,12 @@ margin-bottom: 10%;
 .additional{
     font-family: Arial, Helvetica, sans-serif;
     padding-bottom: 70px;
+
+}
+
+
+.linebr{
+    white-space: pre-line;
 
 }
 
