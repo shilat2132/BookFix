@@ -80,7 +80,7 @@ span.“tim” {
 
 </style>
 <div class="container">
-    <!-- <a  href="/editstory/<%=showedstory._id%>">עריכת ספר</a> -->
+    <a  href="/editstory/<%=showedstory._id%>">עריכת ספר</a>
     <div class="show">
         <span class="storyname"><%=showedstory.series%> 
             <br> <%=showedstory.name%> </span>
@@ -93,7 +93,8 @@ span.“tim” {
             <br>
             שנת הוצאה: <%=showedstory.year%>
         <br>
-    ספר דיגיטלי - <%=showedstory.price%>₪
+    ספר דיגיטלי -  <span class="erasedprice" style="color: red; text-decoration: line-through;">27₪</span>
+     <%=showedstory.price%>₪
     </div>
 
         <div><%-showedstory.paybutton%></div>
