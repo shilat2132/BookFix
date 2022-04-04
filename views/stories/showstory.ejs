@@ -50,10 +50,10 @@ span.“tim” {
     line-height: 2;
     text-align: justify;
 }
-#bord{
+/* #bord{
     border-right: 5px solid #FFFACD;
     padding-right: 10px;
-}
+} */
 
 .innersum b{
     font-size:20px ;
@@ -68,22 +68,37 @@ span.“tim” {
 #digitalg{
     background-color: #AFEEEE;
     border: none;
+    border-radius: 19px;
+    font-weight: 900;
 }
 #explain{
     direction: rtl;
-    font-size: 13px;
+    font-size: 16px;
     line-height: 25px;
     padding-top: 10px ;
 
 }
+.digitalexplanation{
+    font-family: 'Alef', sans-serif;
+}
 
+button input[type=image]{
+    height: 0px;
+}
+
+.showjumbo{
+    background: #BE93C5;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #7BC6CC, #BE93C5);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #7BC6CC, #BE93C5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
 
 </style>
 <div class="container">
     <!-- <a  href="/editstory/<%=showedstory._id%>">עריכת ספר</a> -->
     <div class="show">
         <span class="storyname"><%=showedstory.series%> 
-            <br> <%=showedstory.name%> </span>
+            <br><span id="actualname"> <%=showedstory.name%> </span></span>
         <hr class="hr">
         <span><%=showedstory.seriesnum%> </span>
         <br>
@@ -98,7 +113,11 @@ span.“tim” {
      <%=showedstory.price%>₪
     </div>
 
-        <div><%-showedstory.paybutton%></div>
+        <button style="background-color: #AFEEEE;  border-radius: 19px;  border: none;
+height: 25px; margin-bottom: 4%;      font-weight: 900;
+   font-family: 'Alef', sans-serif;
+font-size: 14px;
+        "> רכישת ספר דיגיטלי<%-showedstory.paybutton%></button>
         <div class="digitalexplanation">
             <button onclick="explain()" id="digitalg">איך קוראים ספר דיגיטלי</button>
             <div  style="display: none;" id="explain">
@@ -107,19 +126,14 @@ span.“tim” {
                 לאחר מכן תצטרכו להוריד את האפליקציה אשר מאפשרת לקרוא ספר דיגיטלי ובתוך האפליקציה, הספר יופיע לכם באופן אוטומטי
                 <br>
                 במייל, יחד עם קובץ הורדת הספר, ישלח אליכם גם קישור לאפליקציה בה קוראים את הספר
-                <br>
-                אם נתקלתם בבעיה, אתם מוזמנים לכתוב לי בעמוד האינסטגרם                 <a href="https://www.instagram.com/bookfix1/">@bookfix1</a>
-                <br>
-                או לשלוח לי מייל לכתובת 
-                <br>
-                shilat2132@gmail.com
+               
             </div>
-            <div style="font-size: 12px; margin-top: 3%;">מי שמעוניין לשלם בביט מוזמן ליצור איתי קשר באחת מהדרכים המופיעות בתחתית האתר</div>
+            <div style="font-size: 14px; margin-top: 3%;">מי שמעוניין לשלם בביט מוזמן ליצור איתי קשר באחת מהדרכים המופיעות בתחתית האתר</div>
 
         </div>
 
-        <div style="margin-top: 7%;" class="summary">
-            <span  class="tak" > תקציר:</span>
+        <div style="margin-top: 7%; padding-bottom: 0px;" class="summary jumbotron showjumbo">
+            <span  class="tak" > תקציר</span>
             <div class="innersum">
                 <%-showedstory.summary%>
                 <div class="additional">

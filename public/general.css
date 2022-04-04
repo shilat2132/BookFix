@@ -64,17 +64,13 @@ margin-top: 3%;}
 /* PHONE */
 @media only screen and (max-width: 600px) {
     .bottomnav{
-        height: 290px;
+        height: 315px;
     }
     .tak{
-        font-size: 24px;
+        font-size: 39px;
         font-family: 'Alef', sans-serif;
     }
-    .additional{
-        margin-top: 17%;
-      
     
-    }
     .showpic {
         height: 165px;
        
@@ -92,6 +88,10 @@ margin-top: 3%;}
     .storyname{
         font-size: 28px;
     
+    }
+    #actualname{
+        font-size: 23px;
+
     }
     .indexlink{
         width: 45%;
@@ -232,8 +232,7 @@ margin-bottom: 10%;
 /* SHOW STORY AND BOOK */
 .additional{
     font-family: Arial, Helvetica, sans-serif;
-    padding-bottom: 70px;
-
+color: black;
 }
 
 
@@ -249,10 +248,8 @@ margin-bottom: 10%;
     margin-top: 3%;
     border-radius: 12px;
 }
-.storyname{
-    font-family: 'Alef', sans-serif;
-
-}
+.storyname, .tak{
+    font-family: 'Rubik Wet Paint', cursive;}
 #summary{
     direction: rtl;
 
@@ -260,19 +257,18 @@ margin-bottom: 10%;
 
 .innersum{
     line-height: 30px;
-    margin-right: 15px;
     font-family: 'Secular One', sans-serif;
-    margin-left: 3%;
-    font-size: 18px;
-    text-align: justify;
+    font-size: 16px;
+    text-align: center;
+    white-space: pre-line;
+    color: white;
+
 
 
 
 
 }
-.tak{
-    font-family: 'Alef', sans-serif;
-}
+
 
 .seriescol{
     margin-top: 15%;

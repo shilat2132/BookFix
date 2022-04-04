@@ -1,9 +1,23 @@
 <%-include("parts/showsthead") %>
+<style>
+    .indexjumbo{
+        background: #DAE2F8;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #D6A4A4, #DAE2F8);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #D6A4A4, #DAE2F8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    }
+</style>
 <!-- vars: allstories -->
 
 <div class="container">
+    <div class="jumbotron indexjumbo" style="font-weight: 900;color: white;">
+        <span style=" font-size: 27px; ">ספרים ומצילים</span>
+        <div style="font-size: 18px;">
+            50% מההכנסות על הספר, ייתרמו לפרוייקט 'ספרים ומצילים' אשר מוכר ספרים למען סיוע לכלבים ולחתולים בבאר שבע והסביבה
+        </div>
+    </div>
     <!-- <a style="font-size: 20px; color: black;" href="/createstory">הוספת ספר</a> -->
-<img src="https://i.ibb.co/94tR3V3/20220114-005412-0000.png" class="logopic punchie">
+<!-- <img src="https://i.ibb.co/94tR3V3/20220114-005412-0000.png" class="logopic punchie"> -->
 <br>
 <span class="title">הספרים שלי</span>
     <hr class="hr">
@@ -16,7 +30,6 @@
                     <%=story.series %> 
                     <br>
                     <!-- <span class="erasedprice" style="color: red; text-decoration: line-through;">37₪</span> -->
-                    <br>
                     ₪ <%=story.price%>
                 </b>
                 </div>
