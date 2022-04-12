@@ -113,11 +113,8 @@ background: linear-gradient(to right, #7BC6CC, #BE93C5); /* W3C, IE 10+/ Edge, F
      <%=showedstory.price%>₪
     </div>
 
-        <button style="background-color: #AFEEEE;  border-radius: 19px;  border: none;
-height: 25px; margin-bottom: 4%;      font-weight: 900;
-   font-family: 'Alef', sans-serif;
-font-size: 14px;
-        "> רכישת ספר דיגיטלי<%-showedstory.paybutton%></button>
+        
+        <%-showedstory.paybutton%>
         <div class="digitalexplanation">
             <button onclick="explain()" id="digitalg">איך קוראים ספר דיגיטלי</button>
             <div  style="display: none;" id="explain">
@@ -131,7 +128,11 @@ font-size: 14px;
             <div style="font-size: 14px; margin-top: 3%;">מי שמעוניין לשלם בביט מוזמן ליצור איתי קשר באחת מהדרכים המופיעות בתחתית האתר</div>
 
         </div>
-
+            
+            
+        <div style="font-size: 13px; margin-top: 8%;">
+            50% מההכנסות על הספר, ייתרמו לפרוייקט 'ספרים ומצילים' אשר מוכר ספרים למען סיוע לכלבים ולחתולים בבאר שבע והסביבה
+        </div>
         <div style="margin-top: 7%; padding-bottom: 0px;" class="summary jumbotron showjumbo">
             <span  class="tak" > תקציר</span>
             <div class="innersum">
