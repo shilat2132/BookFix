@@ -39,7 +39,7 @@ var story = mon.Schema({
   fullcover: String,
   series: String,
   seriesnum: String,
-  price: Number,
+  price: String,
   paybutton: String,
   summary: String,
   additionalinfo: String,
