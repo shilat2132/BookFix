@@ -11,28 +11,55 @@
     }
 
     function firstch(){
-        var exp = document.querySelector(".firsts")
-        if(exp.style.display =="none"){
-            exp.style.display = "block"
-        } else{
-            exp.style.display = "none"
-        }
+        var firstChapter = document.querySelector(".firsts")
+        var summary = document.querySelector(".innersum")
+        var takB = document.querySelector(".tak")
+        var chapButton = document.querySelector(".chapButton")
+            firstChapter.style.display = "block"
+            summary.style.display = "none"
+            chapButton.style.backgroundColor  = "#AFEEEE"
+            takB.style.backgroundColor  = "white"
+    }
+    function taksir(){
+        var firstChapter = document.querySelector(".firsts")
+        var summary = document.querySelector(".innersum")
+        var takB = document.querySelector(".tak")
+        var chapButton = document.querySelector(".chapButton")
+                    summary.style.display = "block"
+                    firstChapter.style.display = "none"
+            chapButton.style.backgroundColor  = "white"
+            takB.style.backgroundColor  = "#AFEEEE"
     }
     
 
 </script>
 <style>
+.comHr{
+    border:1px solid gainsboro  ;
+  background-color: gainsboro  ;
+}
+    .commentsform, .showcomments{
+        margin-top: 8%;
+        text-align: right;
+        font-family: 'Varela Round', sans-serif;
+    }
  .butto{
-     background-color: lavender;
-     font-weight: 900;
-     height: 47px;
-     padding-top: 10px;
-     font-size: 19px;
-     border-radius: 19px;
+    font-family: 'Alef', sans-serif;
+    box-shadow: 1px 2px #888888;
+height: 30px;
+     font-size: 23px;
+     border-left: 2px solid whitesmoke;
+ }
+ .innersum{
+     font-size: 17px;
+     color: dimgray;
  }
  .firsts{
     font-family: 'Noto Sans Hebrew', sans-serif;
-margin-top: 6%;}
+margin-top: 6%;
+font-size:17px;
+color: dimgray;
+}
 
     span.“chap” {
     font-size: 27px;
@@ -40,7 +67,6 @@ margin-top: 6%;}
 }
 span.“tim” {
     text-align: center;
-    /* font-weight: 900; */
     margin-top: 3px;
     font-size: 13px;
 }
@@ -50,16 +76,17 @@ span.“tim” {
     line-height: 2;
     text-align: justify;
 }
-/* #bord{
-    border-right: 5px solid #FFFACD;
-    padding-right: 10px;
-} */
+.storyname{
+    font-family: 'Rubik Wet Paint', cursive;
 
+}
 .innersum b{
     font-size:20px ;
 }
 
-
+.buttonscol{
+    margin-top: 4%;
+}
 .payimage{
     height: 60px;
     padding-top: 10px;
@@ -86,13 +113,26 @@ button input[type=image]{
     height: 0px;
 }
 
-.showjumbo{
-    background: #BE93C5;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #7BC6CC, #BE93C5);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #7BC6CC, #BE93C5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+#addCom{
+    font-family: 'Varela Round', sans-serif;
+font-size: 29px;
+  }
+  .comtext{
+    white-space: pre-line;
+  }
+  .chapswords{
+      margin-top: 5%;
+      font-family: 'Frank Ruhl Libre', serif;
+      padding: 7%;
+      text-align: justify;
+      font-weight: 700;
+      line-height: 1.5;  }
+.submitbtn{
+    background-image: url("	https://i.pinimg.com/236x/12/93/b0/1293b0101c55c9e5499aec83063ea313.jpg");
+    background-repeat: no-repeat;
+    color: white;
+    border-radius: 25px;
 }
-
 </style>
 <div class="container">
     <!-- <a  href="/editstory/<%=showedstory._id%>">עריכת ספר</a> -->
@@ -109,7 +149,6 @@ background: linear-gradient(to right, #7BC6CC, #BE93C5); /* W3C, IE 10+/ Edge, F
             שנת הוצאה: <%=showedstory.year%>
         <br>
     ספר דיגיטלי - 
-     <!-- <span class="erasedprice" style="color: red; text-decoration: line-through;">37₪</span> -->
      <%-showedstory.price%>
     </div>
 
@@ -130,27 +169,59 @@ background: linear-gradient(to right, #7BC6CC, #BE93C5); /* W3C, IE 10+/ Edge, F
         </div>
             
             
-        <div style="font-size: 13px; margin-top: 8%;">
-            50% מההכנסות על הספר, ייתרמו לפרוייקט 'ספרים ומצילים' אשר מוכר ספרים למען סיוע לכלבים ולחתולים בבאר שבע והסביבה
-        </div>
-        <div style="margin-top: 7%; padding-bottom: 0px;" class="summary jumbotron showjumbo">
-            <span  class="tak" > תקציר</span>
-            <div class="innersum">
-                <%-showedstory.summary%>
-                <div class="additional">
-                    <%-showedstory.additionalinfo%>
-                </div>
-
-            </div>
-            
-        </div>
-        <div onclick="firstch()" class="butto">קריאת הפרק הראשון</div>
-        <div style="display: none;" class="firsts linebr">
-            <%-showedstory.firstchaps%>
-        </div>
+        <div style="font-size: 13px; margin-top: 8%;"> 50% מההכנסות על הספר, ייתרמו לפרוייקט 'ספרים ומצילים' אשר מוכר ספרים למען סיוע לכלבים ולחתולים בבאר שבע והסביבה</div>
     </div>
-   
-
 </div>
 
+
+            <div class="buttonscol">
+                <span style="background-color: #AFEEEE" onclick="taksir()" class="tak butto sumButton col-lg-6 col-sm-6" > תקציר</span>
+                <span onclick="firstch()" class="butto chapButton col-lg-6 col-sm-6">פרק הראשון</span>
+            </div>
+            <div class="container"> 
+            <div class="innersum">
+                <%-showedstory.summary%>
+            </div>
+            
+        <div style="display: none;" class="firsts linebr">
+            <b> <%-showedstory.title1%> </b>
+           <div class="chapswords"><%-showedstory.prolog%> </div> 
+            <b> <%-showedstory.title2%> </b>
+            <div class="chapswords"><%-showedstory.firstChapter%> </div> 
+
+        </div>
+    <div style="margin-top: 9%;" class="showcomments container">
+        <span style=" font-size: 23px;" class="titlefont">תגובות/סקירות על הספר</span>
+        <div style="margin-top: 5%">
+       <% showedstory.comments.forEach(function(comment){%>
+           <div class="singleComment container">
+            <b><%= comment.name%> </b> 
+                <div class="comtext"><%= comment.text%></div>
+                <hr class="comHr">
+           </div>
+    
+                <%})%>
+            </div>
+    </div>
+<form class="commentsform" action="/createcomment/<%=showedstory._id%>" method="post">
+
+    <span id="addCom">הוספת תגובה</span>
+    <div class="form-group">
+        <label>שם</label>
+        <input class="form-control" type="text" required name="comment[name]">
+      </div>
+      <div class="form-group">
+        <label>אימייל</label>
+        <input class="form-control" type="email"  name="comment[email]">
+      </div>
+      <div class="form-group">
+        <label>תגובה</label>
+        <textarea class="form-control" required name="comment[text]"></textarea>
+      </div>
+      <div class="form-group">
+        <input class="btn submitbtn" class="form-control" type="submit" value="שליחה">
+    </div>
+</form>
+   
+</div>
 <%-include("parts/footer") %>

@@ -42,8 +42,12 @@ var story = mon.Schema({
   price: String,
   paybutton: String,
   summary: String,
-  additionalinfo: String,
-  firstchaps: String
+  aboutstory: String,
+  title1: String,
+  prolog: String,
+  title2: String,
+  firstChapter: String,
+  comments: [{name:String, email: String, text:String}]
 })
 
 
@@ -123,6 +127,72 @@ app.delete("/deletestory/:id", function(req,res){
 })
 
 
+// COMMENTS
+// create a comment
+app.post("/createcomment/:id", function(req, res){
+  var com = req.body.comment
+  var id = req.params.id //bookid
+ Story.findByIdAndUpdate(id, { $push: { comments: com  } }, function(err, foundbook){
+   if(err){res.send("error")}
+   else{
+res.redirect("/showstory/" +id)
+   }
+ })
+})
+
+// comments index
+app.get("/commentsindex/:id", function(req,res){
+  var id = req.params.id
+  Story.findById(id, function(err, found){
+    if(err){res.send("error")}
+    else{
+      res.render("stories/commentsindex", {commentsarr: found.comments, bookid: id})
+    }
+  })
+})
+
+// edit comment
+app.get("/editcomment/:bookid/:index", function(req,res){
+  var commentid = req.params.index
+var bookid = req.params.bookid
+Story.findById(bookid, function(err, foundbook){
+  if(err){res.send("error")}
+  else{
+    var updatecomment = foundbook.comments[commentid]
+    res.render("stories/editcomment",{ updatecomment: updatecomment, commentid: commentid, bookid: bookid})
+  }
+})
+ 
+})
+
+app.put("/editcomment/:bookid/:index", function(req, res){
+  var commentid = req.params.index
+ var bookid = req.params.bookid
+   var updatedC = req.body.comment
+   Story.findById(bookid, function(err, foundbook){
+     if(err){res.send("error")}
+     else{
+       foundbook.comments.set(commentid, updatedC)
+        foundbook.save();
+       res.redirect("/commentsindex/"+foundbook._id)}
+   })
+ })
+
+ // delete comment
+app.delete("/deletecomment/:bookid/:commentid", function(req,res){
+  var bookid = req.params.bookid
+  var commentid = req.params.commentid
+  Story.findById(bookid, function(err, foundbook){
+    if(err){res.send("error")}
+    else{
+      foundbook.comments.splice (commentid, 1)
+       foundbook.save();
+      res.redirect("/commentsindex/"+foundbook._id)}
+  })
+
+})
+
+ 
 
 // BOOK collection
 var hand = new mon.Schema({

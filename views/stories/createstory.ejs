@@ -1,43 +1,68 @@
 <%-include("parts/showsthead") %>
 <div class="container">
     <form action="/storycr" method="POST">
-        <h2>יצירת ספר אלקטרוני חדש</h2>
+        <h2>יצירת ספר דיגיטלי חדש</h2>
         <div class="form-group">
+          <label>שם ספר</label>
             <input class="form-control" type="text" placeholder="שם הספר" name="story[name]" />
           </div>   
           <div class="form-group">
+            <label>סופרת</label>
             <input class="form-control" type="text" placeholder="שם הסופר" name="story[writer]" />
           </div>
           <div class="form-group">
+            <label>שנת הוצאה</label>
             <input class="form-control" type="text" placeholder="שנת הוצאה" name="story[year]" />
           </div>
           <div class="form-group">
+            <label>כריכה קדמית</label>
           <input class="form-control" type="text" placeholder="כריכה" name="story[cover]" />
           </div>
           <div class="form-group">
+            <label>כריכה מלאה</label>
             <input class="form-control" type="text" placeholder="כריכה מלאה" name="story[fullcover]" />
             </div>
             <div class="form-group">
+              <label>שם סדרה</label>
               <input class="form-control" type="text" placeholder="סדרה" name="story[series]" />
               </div>
               <div class="form-group">
+                <label>מספר ספר בסדרה</label>
                 <input class="form-control" type="text" placeholder="מספר בסדרה" name="story[seriesnum]" />
                 </div>
           <div class="form-group">
+            <label>מחיר</label>
           <input class="form-control" type="text" placeholder="מחיר " name="story[price]" />
           </div>
           <div class="form-group">
+            <label>כפתור מחיר</label>
       <textarea class="form-control" placeholder="כפתור מחיר" name="story[paybutton]"></textarea>
     </div>
     <div class="form-group">
+      <label>תקציר</label>
+
         <textarea class="form-control" placeholder=" תקציר" name="story[summary]"></textarea>
       </div>
       <div class="form-group">
-        <textarea class="form-control" placeholder=" מידע נוסף על הספר" name="story[additionalinfo]"></textarea>
+        <label>על הספר</label>
+
+        <textarea class="form-control" placeholder=" על הספר" name="story[aboutstory]"></textarea>
       </div>
-       
       <div class="form-group">
-        <textarea class="form-control" placeholder=" פרולוג ופרק ראשון" name="story[firstchaps]"></textarea>
+        <label>כותרת פרולוג</label>
+      <textarea class="form-control" type="text" placeholder="כותרת פרולוג " name="story[title1]"></textarea>
+      </div>
+      <div class="form-group">
+        <label>פרולוג</label>
+        <textarea class="form-control" placeholder=" פרולוג" name="story[prolog]"></textarea>
+      </div>
+      <div class="form-group">
+        <label>כותרת פרק 1</label>
+      <textarea class="form-control" type="text" placeholder="כותרת פרק 1 " name="story[title2]"></textarea>
+      </div>
+      <div class="form-group">
+        <label> פרק ראשון</label>
+        <textarea class="form-control" placeholder=" פרק ראשון" name="story[firstChapter]"></textarea>
       </div>
      
     

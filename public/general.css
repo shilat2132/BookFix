@@ -1,3 +1,10 @@
+nav{
+    background-image: url("https://i.pinimg.com/564x/e1/39/c2/e139c244dcb9838cbfe22a02423a59b9.jpg");
+    color: white;
+}
+.botcontent a{
+color: lavender;
+}
 /* computer */
 
 @media only screen and (min-width: 600px) {
@@ -63,9 +70,7 @@ margin-top: 3%;}
 
 /* PHONE */
 @media only screen and (max-width: 600px) {
-    .bottomnav{
-        height: 315px;
-    }
+    
     .tak{
         font-size: 39px;
         font-family: 'Alef', sans-serif;
@@ -168,8 +173,8 @@ font-family: 'Tinos', serif;
 .hr{
   width:80%;
   margin-top: 0px;
-  border:1px solid #AFEEEE ;
-  background-color: #AFEEEE;
+  border:1px solid #000080  ;
+  background-color: #000080  ;
 
 }
 
@@ -177,9 +182,6 @@ font-family: 'Tinos', serif;
 .logopic{
 height: 170px;
 border-radius: 18px;
-margin-bottom: 5%;
-margin-top: 5%;
-
 }
 
 
@@ -230,38 +232,30 @@ margin-bottom: 10%;
 } 
 
 /* SHOW STORY AND BOOK */
-.additional{
-    font-family: Arial, Helvetica, sans-serif;
-color: black;
-}
-
-
 .linebr{
     white-space: pre-line;
 
 }
 
 .showinfo {
-    margin-top: 5%; line-height: 27px; font-size: 16px; font-weight: 700;
+    margin-top: 5%; line-height: 1.5; font-size: 16px; font-weight: 700;
 }
 .showpic {
     margin-top: 3%;
     border-radius: 12px;
 }
-.storyname, .tak{
-    font-family: 'Rubik Wet Paint', cursive;}
+
 #summary{
     direction: rtl;
 
 }
 
 .innersum{
-    line-height: 30px;
+    line-height: 1.5;
     font-family: 'Secular One', sans-serif;
-    font-size: 16px;
+    font-size: 15px;
     text-align: center;
     white-space: pre-line;
-    color: white;
 
 
 

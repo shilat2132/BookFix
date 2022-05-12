@@ -4,42 +4,67 @@
 <form action="/updatestory/<%=editit._id%>?_method=PUT" method="POST">
     <h2>עריכת ספר </h2>
     <div class="form-group">
+      <label>שם ספר</label>
         <input class="form-control" type="text" value="<%=editit.name%>" name="story[name]" />
       </div>   
-      <div class="form-group">
-        <input class="form-control" type="text" value="<%=editit.writer%>" name="story[writer]" />
-      </div>
-      <div class="form-group">
-        <input class="form-control" type="text" value="<%=editit.year%>" name="story[year]" />
-      </div>
-      <div class="form-group">
-      <input class="form-control" type="text" value="<%=editit.cover%>" name="story[cover]" />
-      </div>
-      <div class="form-group">
-        <input class="form-control" type="text" value="<%=editit.fullcover%>" name="story[fullcover]" />
+        <div class="form-group">
+          <label>סופרת</label>
+          <input class="form-control" type="text" value="<%=editit.writer%>" name="story[writer]" />
         </div>
         <div class="form-group">
-          <input class="form-control" type="text" value="<%=editit.series%>" name="story[series]" />
+          <label>שנת הוצאה</label>
+          <input class="form-control" type="text" value="<%=editit.year%>" name="story[year]" />
+        </div>
+        <div class="form-group">
+          <label>כריכה קדמית</label>
+        <input class="form-control" type="text" value="<%=editit.cover%>" name="story[cover]" />
+        </div>
+        <div class="form-group">
+          <label>כריכה מלאה</label>
+          <input class="form-control" type="text"value="<%=editit.fullcover%>" name="story[fullcover]" />
           </div>
           <div class="form-group">
-            <input class="form-control" type="text" value="<%=editit.seriesnum%>" name="story[seriesnum]" />
+            <label>שם סדרה</label>
+            <input class="form-control" type="text" value="<%=editit.series%>" name="story[series]" />
             </div>
-      <div class="form-group">
-      <input class="form-control" type="text" value="<%=editit.price%>" name="story[price]" />
-      </div>
-      <div class="form-group">
-  <textarea class="form-control"  name="story[paybutton]"><%=editit.paybutton%></textarea>
-</div>
+            <div class="form-group">
+              <label>מספר ספר בסדרה</label>
+              <input class="form-control" type="text" value="<%=editit.seriesnum%>" name="story[seriesnum]" />
+              </div>
+        <div class="form-group">
+          <label>מחיר</label>
+        <input class="form-control" type="text" value="<%=editit.price%>" name="story[price]" />
+        </div>
+        <div class="form-group">
+          <label>כפתור מחיר</label>
+    <textarea class="form-control" name="story[paybutton]"><%=editit.paybutton%></textarea>
+  </div>
+  <div class="form-group">
+    <label>תקציר</label>
 
-<div class="form-group">
-    <textarea class="form-control" name="story[summary]"><%=editit.summary%></textarea>
-  </div>
-  <div class="form-group">
-    <textarea class="form-control" name="story[additionalinfo]"><%=editit.additionalinfo%></textarea>
-  </div>
-  <div class="form-group">
-    <textarea class="form-control" name="story[firstchaps]"><%=editit.firstchaps%></textarea>
-  </div>
+      <textarea class="form-control" name="story[summary]"><%=editit.summary%></textarea>
+    </div>
+    <div class="form-group">
+      <label>על הספר</label>
+
+      <textarea class="form-control"  name="story[aboutstory]"><%=editit.aboutstory%></textarea>
+    </div>
+    <div class="form-group">
+      <label>כותרת פרולוג</label>
+    <textarea class="form-control" type="text" value="<%=editit.title1%>" name="story[title1]"><%=editit.title1%></textarea>
+    </div>
+    <div class="form-group">
+      <label>פרולוג</label>
+      <textarea class="form-control" name="story[prolog]"><%=editit.prolog%></textarea>
+    </div>
+    <div class="form-group">
+      <label>כותרת פרק 1</label>
+    <textarea class="form-control" type="text"  name="story[title2]"><%=editit.title2%></textarea>
+    </div>
+    <div class="form-group">
+      <label> פרק ראשון</label>
+      <textarea class="form-control"  name="story[firstChapter]"><%=editit.firstChapter%></textarea>
+    </div>
    
  
  

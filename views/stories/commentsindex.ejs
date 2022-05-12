@@ -1,0 +1,16 @@
+<%-include("parts/showsthead") %>
+<!-- vars: commentsarr, bookid -->
+<h1>דף תגובות</h1>
+   <div style="margin-top: 9%;" class="showcomments container">
+    <% commentsarr.forEach(function(comment){%>
+       <div class=" container">
+        <span>
+            <%= comment.name%>,  <%= comment.email%>
+            <div class="comtext"><%= comment.text%></div>
+            <a href="/editcomment/<%=bookid%>/<%=commentsarr.indexOf(comment)%>">ערכי תגובה</a>
+            <hr class="comHr">
+       </div>
+
+            <%})%>
+</div>
+<%-include("parts/footer") %>
