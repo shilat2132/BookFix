@@ -23,11 +23,11 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shilat2132/BookFix.git"
+    "url": "git+https://git.heroku.com/bookfix-shilat.git"
   },
   "bugs": {
-    "url": "https://github.com/shilat2132/BookFix/issues"
+    "url": "https://git.heroku.com/bookfix-shilat.git/issues"
   },
-  "homepage": "https://github.com/shilat2132/BookFix#readme",
+  "homepage": "https://git.heroku.com/bookfix-shilat.git#readme",
   "description": ""
 }
