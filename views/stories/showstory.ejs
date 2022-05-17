@@ -92,7 +92,7 @@ span.“tim” {
     padding-top: 10px;
     text-align: center;
 }
-#digitalg{
+.digitalg{
     background-color: #AFEEEE;
     border: none;
     border-radius: 19px;
@@ -133,6 +133,12 @@ font-size: 29px;
     color: white;
     border-radius: 25px;
 }
+/* .payb{
+    width: 50%;
+    margin-right: 25%;
+    font-family: 'Alef', sans-serif;
+    margin-bottom: 3%;
+} */
 </style>
 <div class="container">
     <!-- <a  href="/editstory/<%=showedstory._id%>">עריכת ספר</a> -->
@@ -153,9 +159,11 @@ font-size: 29px;
     </div>
 
         
+
+    
         <%-showedstory.paybutton%>
         <div class="digitalexplanation">
-            <button onclick="explain()" id="digitalg">איך קוראים ספר דיגיטלי</button>
+            <button onclick="explain()" class="digitalg">איך קוראים ספר דיגיטלי</button>
             <div  style="display: none;" id="explain">
                 עד 24 שעות לאחר רכישת הספר, ישלח אליכם במייל קובץ הספר להורדה (לשם כך, עליכם להזין את כתובת המייל שלכם בתשלום)
                 <br>
@@ -176,7 +184,7 @@ font-size: 29px;
 
             <div class="buttonscol">
                 <span style="background-color: #AFEEEE" onclick="taksir()" class="tak butto sumButton col-lg-6 col-sm-6" > תקציר</span>
-                <span onclick="firstch()" class="butto chapButton col-lg-6 col-sm-6">פרק הראשון</span>
+                <span onclick="firstch()" class="butto chapButton col-lg-6 col-sm-6">פרק ראשון</span>
             </div>
             <div class="container"> 
             <div class="innersum">
