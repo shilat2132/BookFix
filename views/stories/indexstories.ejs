@@ -7,25 +7,27 @@
 font-family: 'Alef', sans-serif;
 
     }
+    .title{
+        font-size: 28px;
+    }
 </style>
 <!-- vars: allstories -->
 
 <div class="container">
 
-    <div class="jumbotron indexjumbo" style="font-weight: 900;color: white;">
-        <span style=" font-size: 27px; ">ספרים ומצילים</span>
-        <div style="font-size: 18px;">
-            50% מההכנסות על הספר, ייתרמו לפרוייקט 'ספרים ומצילים' אשר מוכר ספרים למען סיוע לכלבים ולחתולים בבאר שבע והסביבה
-       <br>
-       <a href="https://www.instagram.com/books_and_rescuers_/">books_and_rescuers_    </a>
-        </div>
-    </div>
     <img src="https://i.ibb.co/zb3m1zC/20220414-173054-0000.png" class="logopic bookfix">
 
-    <!-- <a style="font-size: 20px; color: black;" href="/createstory">הוספת ספר</a> -->
-<!-- <img src="https://i.ibb.co/94tR3V3/20220114-005412-0000.png" class="logopic punchie"> -->
+    
 <br>
-<span class="title">הספרים שלי</span>
+<div class="jumbotron indexjumbo" style="font-weight: 900;color: white;">
+    <span style=" font-size: 27px; ">ספרים ומצילים</span>
+    <div style="font-size: 14px;">
+        50% מההכנסות על הספר, ייתרמו לפרוייקט 'ספרים ומצילים' אשר מוכר ספרים למען סיוע לכלבים ולחתולים
+   <br>
+   <a href="https://www.instagram.com/books_and_rescuers_/">books_and_rescuers_    </a>
+    </div>
+</div>
+<span class="title">הספרים של שילת דהן</span>
     <hr class="hr">
     <% allstories.forEach(function(story){ %>
             <a class="indexlink" href="/showstory/<%=story._id%>">
@@ -44,6 +46,8 @@ font-family: 'Alef', sans-serif;
 
             </a>
             <%}) %>
+
+            
 </div>
 
 <%-include("parts/footer") %>

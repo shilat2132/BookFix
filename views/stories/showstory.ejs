@@ -12,23 +12,47 @@
 
     function firstch(){
         var firstChapter = document.querySelector(".firsts")
-        var summary = document.querySelector(".innersum")
+        var summary = document.querySelector(".actualSummary")
         var takB = document.querySelector(".tak")
+        var aboutText = document.querySelector(".aboutText")
+        var aboutB = document.querySelector(".aboutButton")
         var chapButton = document.querySelector(".chapButton")
             firstChapter.style.display = "block"
             summary.style.display = "none"
+            aboutText.style.display = "none"
             chapButton.style.backgroundColor  = "#AFEEEE"
             takB.style.backgroundColor  = "white"
+            aboutB.style.backgroundColor  = "white"
+
     }
     function taksir(){
         var firstChapter = document.querySelector(".firsts")
-        var summary = document.querySelector(".innersum")
+        var summary = document.querySelector(".actualSummary")
+        var aboutText = document.querySelector(".aboutText")
+        var aboutB = document.querySelector(".aboutButton")
         var takB = document.querySelector(".tak")
         var chapButton = document.querySelector(".chapButton")
                     summary.style.display = "block"
                     firstChapter.style.display = "none"
+                    aboutText.style.display = "none"
+                    aboutB.style.backgroundColor  = "white"
+
             chapButton.style.backgroundColor  = "white"
             takB.style.backgroundColor  = "#AFEEEE"
+    }
+    function about(){
+        var firstChapter = document.querySelector(".firsts")
+        var summary = document.querySelector(".actualSummary")
+        var aboutText = document.querySelector(".aboutText")
+        var aboutB = document.querySelector(".aboutButton")
+        var takB = document.querySelector(".tak")
+        var chapButton = document.querySelector(".chapButton")
+        aboutText.style.display = "block"
+                    summary.style.display = "none"
+                    firstChapter.style.display = "none"
+            chapButton.style.backgroundColor  = "white"
+            takB.style.backgroundColor  = "white"
+            aboutB.style.backgroundColor  = "#AFEEEE"
     }
     
 
@@ -92,22 +116,30 @@ span.“tim” {
     padding-top: 10px;
     text-align: center;
 }
+.payb{
+    float: right;
+    margin-right: 5%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
 .digitalg{
-    background-color: #AFEEEE;
+    background-image: url("https://i.pinimg.com/236x/12/93/b0/1293b0101c55c9e5499aec83063ea313.jpg");
     border: none;
+    color: white;
+    width: 110px;
     border-radius: 19px;
     font-weight: 900;
+    font-family: 'Alef', sans-serif;
+margin-bottom: 5%;
 }
 #explain{
     direction: rtl;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 25px;
     padding-top: 10px ;
 
 }
-.digitalexplanation{
-    font-family: 'Alef', sans-serif;
-}
+
 
 button input[type=image]{
     height: 0px;
@@ -133,12 +165,7 @@ font-size: 29px;
     color: white;
     border-radius: 25px;
 }
-/* .payb{
-    width: 50%;
-    margin-right: 25%;
-    font-family: 'Alef', sans-serif;
-    margin-bottom: 3%;
-} */
+
 </style>
 <div class="container">
     <!-- <a  href="/editstory/<%=showedstory._id%>">עריכת ספר</a> -->
@@ -150,47 +177,51 @@ font-size: 29px;
         <br>
        
             <img  class="showpic" src="<%=showedstory.fullcover%>">
-        <div class="showinfo"><%=showedstory.writer%>
+        <div class="showinfo">
             <br>
             שנת הוצאה: <%=showedstory.year%>
         <br>
     ספר דיגיטלי - 
      <%-showedstory.price%>
+     <br>
+     <br>
+     50% מההכנסות נתרמים לפרוייקט 'ספרים ומצילים' אשר מממן סיוע לכלבים וחתולים
     </div>
-
-        
-
-    
         <%-showedstory.paybutton%>
-        <div class="digitalexplanation">
-            <button onclick="explain()" class="digitalg">איך קוראים ספר דיגיטלי</button>
-            <div  style="display: none;" id="explain">
-                עד 24 שעות לאחר רכישת הספר, ישלח אליכם במייל קובץ הספר להורדה (לשם כך, עליכם להזין את כתובת המייל שלכם בתשלום)
-                <br>
-                לאחר מכן תצטרכו להוריד את האפליקציה אשר מאפשרת לקרוא ספר דיגיטלי ובתוך האפליקציה, הספר יופיע לכם באופן אוטומטי
-                <br>
-                במייל, יחד עם קובץ הורדת הספר, ישלח אליכם גם קישור לאפליקציה בה קוראים את הספר
-               
-            </div>
-            <div style="font-size: 14px; margin-top: 3%;">מי שמעוניין לשלם בביט מוזמן ליצור איתי קשר באחת מהדרכים המופיעות בתחתית האתר</div>
+            <button onclick="explain()" class="digitalg payb col-lg-4 col-sm-4 col-md-4 m">איך קוראים ספר דיגיטלי</button>
+            <br>
+            <br>
+            <br>
+            <br>
 
-        </div>
+            <div  style="display: none;" id="explain">
+                עד 24 שעות לאחר רכישת הספר, ישלח אליכם במייל קובץ הספר להורדה וקישור לאפליקציית הקריאה (לשם כך, עליכם להזין את כתובת המייל שלכם בתשלום)               
+            <br>
+            <br>
+            ניתן לשלם גם בביט ולהזין מייל בתשלום, ביט למספר  <a href="tel:+972528799399">052-8799399</a>
+            </div>
+
+
             
             
-        <div style="font-size: 13px; margin-top: 8%;"> 50% מההכנסות על הספר, ייתרמו לפרוייקט 'ספרים ומצילים' אשר מוכר ספרים למען סיוע לכלבים ולחתולים בבאר שבע והסביבה</div>
+        <!-- <div style="font-size: 13px; margin-top: 8%;"> 50% מההכנסות על הספר, ייתרמו לפרוייקט 'ספרים ומצילים' אשר מוכר ספרים למען סיוע לכלבים ולחתולים בבאר שבע והסביבה</div> -->
     </div>
 </div>
 
 
             <div class="buttonscol">
-                <span style="background-color: #AFEEEE" onclick="taksir()" class="tak butto sumButton col-lg-6 col-sm-6" > תקציר</span>
-                <span onclick="firstch()" class="butto chapButton col-lg-6 col-sm-6">פרק ראשון</span>
+                <span style="background-color: #AFEEEE" onclick="taksir()" class="tak butto sumButton col-lg-4 col-sm-4 col-md-4" > תקציר</span>
+                <span onclick="about()" class="butto aboutButton col-lg-4 col-sm-4 col-md-4">על הספר</span>
+                <span onclick="firstch()" class="butto chapButton col-lg-4 col-sm-4 col-md-4">פרק ראשון</span>
+
             </div>
             <div class="container"> 
-            <div class="innersum">
+            <div class="innersum actualSummary">
                 <%-showedstory.summary%>
             </div>
-            
+            <div style="display: none;" class="innersum aboutText">
+                <%-showedstory.aboutstory%>
+            </div>
         <div style="display: none;" class="firsts linebr">
             <b> <%-showedstory.title1%> </b>
            <div class="chapswords"><%-showedstory.prolog%> </div> 
