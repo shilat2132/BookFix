@@ -219,10 +219,7 @@ img: String,
 
 var Hand = mon.model("Hand", hand)
 
-//BOOK home
-app.get("/homebooks", function(req, res){
-  res.render("bookies/homebooks")
-})
+
 
 // BOOK create
 app.get("/bookcreate", function(req, res){
@@ -234,18 +231,18 @@ app.post("/bookcr", function(req, res){
     if(err){
       res.send("err")
     }else{
-      res.redirect("/homebooks")
+      res.redirect("/indexbooks")
     }
   })
 })
 
 //BOOK index
-app.get("/indexbooks/:catagory", function(req,res){
-  Hand.find({catagory: req.params.catagory}, function(err, indexbooks){
+app.get("/indexbooks", function(req,res){
+  Hand.find({}, function(err, indexbooks){
     if(err){
       res.send("err")
     }else{
-      res.render("bookies/indexbooks", {indexbooks:indexbooks, catagory: req.params.catagory})
+      res.render("bookies/indexbooks", {indexbooks:indexbooks})
     }
   })
 })
@@ -279,7 +276,7 @@ app.put("/updatebook/:id", function(req, res){
     if(err){
       res.send("err")
     }else{
-      res.redirect("/homebooks")
+      res.redirect("/indexbooks")
     }
   })
 
@@ -291,7 +288,7 @@ app.delete("/deletebook/:id", function(req,res){
     if(err){
       res.send("err")
     }else{
-      res.redirect("/homebooks")
+      res.redirect("/indexbooks")
     }
   })
 })

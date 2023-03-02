@@ -117,16 +117,12 @@ span.“tim” {
     text-align: center;
 }
 .payb{
-    float: right;
-    margin-right: 5%;
     margin-top: 5%;
-    margin-bottom: 5%;
 }
 .digitalg{
     background-image: url("https://i.pinimg.com/236x/12/93/b0/1293b0101c55c9e5499aec83063ea313.jpg");
     border: none;
     color: white;
-    width: 110px;
     border-radius: 19px;
     font-weight: 900;
     font-family: 'Alef', sans-serif;
@@ -185,14 +181,14 @@ font-size: 29px;
      <%-showedstory.price%>
      <br>
      <br>
-     50% מההכנסות נתרמים לפרוייקט 'ספרים ומצילים' אשר מממן סיוע לכלבים וחתולים
+     <span style="font-size: 11px;">
+        50% מההכנסות נתרמים לפרוייקט 'ספרים ומצילים' אשר מממן סיוע לכלבים וחתולים
+    </span>
     </div>
+    <div class="container" style="margin-top: 3%;">
+
         <%-showedstory.paybutton%>
             <button onclick="explain()" class="digitalg payb col-lg-4 col-sm-4 col-md-4">איך קוראים ספר דיגיטלי</button>
-            <br>
-            <br>
-            <br>
-            <br>
 
             <div  style="display: none;" id="explain">
                 עד 24 שעות לאחר רכישת הספר, ישלח אליכם במייל קובץ הספר להורדה וקישור לאפליקציית הקריאה (לשם כך, עליכם להזין את כתובת המייל שלכם בתשלום)               
@@ -200,6 +196,8 @@ font-size: 29px;
             <br>
             ניתן לשלם גם בביט ולהזין מייל בתשלום, ביט למספר  <a href="tel:+972528799399">052-8799399</a>
             </div>
+        </div>
+
     </div>
 </div>
 

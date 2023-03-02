@@ -1,10 +1,10 @@
 <%-include("parts/showsthead") %>
-<!-- vars: indexbooks, catagory -->
+<!-- vars: indexbooks -->
 <div style="margin-top: 2%;" class="container">
     <!-- <a href="/bookcreate">יצירת ספר</a> -->
     <br>
-    <span class="title"> ספרי <%=catagory%></span>
-    <hr class="hr">
+    <img style="height: 100px;" src="https://i.ibb.co/0rGgnhD/20220512-233433-0000.png" class="logopic bookfix">
+
     <div class="index">
         <% indexbooks.forEach(function(book){ %>
             <a class="col-lg-3 col-md-4 col-sm-6 indexlink booksindex" href="/showbook/<%=book._id%>">
