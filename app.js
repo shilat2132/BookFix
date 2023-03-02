@@ -7,6 +7,16 @@ var me = require("method-override");
 var path = require('path');
 const req = require("express/lib/request");
 
+// const { MongoClient, ServerApiVersion } = require('mongodb');
+// const uri = "mongodb+srv://user:<password>@cluster0.xelap.mongodb.net/?retryWrites=true&w=majority";
+// const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+// client.connect(err => {
+//   const collection = client.db("test").collection("devices");
+//   // perform actions on the collection object
+//   client.close();
+// });
+
+
 mon.connect(
     process.env.MONGODB_URI ||
       "mongodb+srv://user:user@cluster0.xelap.mongodb.net/<dbname>?retryWrites=true&w=majority",
@@ -59,7 +69,7 @@ var Story = mon.model("Story", story)
 app.get("/indexstories", function(req, res){
   Story.find({}, function(err, allstories){
     if(err){
-      res.send("err1")
+      console.log("the error "+ err);
     }else{
       res.render("stories/indexstories", {allstories:allstories})
     }
