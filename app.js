@@ -1,5 +1,6 @@
 var express = require("express");
 var app = express();
+const PORT = process.env.PORT || 3030;
 var mon = require("mongoose");
 var bp = require("body-parser");
 var me = require("method-override");
@@ -58,7 +59,7 @@ var Story = mon.model("Story", story)
 app.get("/indexstories", function(req, res){
   Story.find({}, function(err, allstories){
     if(err){
-      res.send("err")
+      res.send("err1")
     }else{
       res.render("stories/indexstories", {allstories:allstories})
     }
@@ -542,6 +543,8 @@ app.post("/searchfood", function(req, res){
 
 
 
-app.listen(process.env.PORT || 3000, process.env.IP, function () {
-  console.log("goodddd");
+
+app.listen(PORT, () => {
+  console.log(`server started on port ${PORT}`);
 });
+
