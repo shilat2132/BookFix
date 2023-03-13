@@ -56,6 +56,9 @@ var story = mon.Schema({
 
 var Story = mon.model("Story", story)
 
+app.get("/", function(req, res){
+  res.redirect("/indexstories")
+})
 
 //STORY index
 app.get("/indexstories", function(req, res){
@@ -86,11 +89,15 @@ app.post("/storycr", function(req,res){
 //STORY SHOW
 app.get("/showstory/:id", function(req, res){
   Story.findById(req.params.id, function(err, showedstory){
-    if(err){
-      res.send("err")
-    }else{
-      res.render("stories/showstory", {showedstory:showedstory})
-    }
+    Story.find({series: showedstory.series}, function(err1, seriesBooks){
+      if(err|| err1){
+        res.send("err")
+      }else{
+        res.render("stories/showstory", {showedstory:showedstory, series: seriesBooks})
+      }
+
+    })
+   
   })
 })
 

@@ -23,12 +23,12 @@ font-family: 'Alef', sans-serif;
 <span class="title">הספרים של שילת דהן</span>
     <hr class="hr">
     <% allstories.forEach(function(story){ %>
-            <a class="indexlink" href="/showstory/<%=story._id%>">
+            <a class="col-lg-3 col-md-4 col-sm-6 booksindex indexlink" href="/showstory/<%=story._id%>">
                 <img class="indexpic"  src="<%=story.cover%>"/> 
                 <div class="info"><b>
                     <%=story.name %> 
                     <br> 
-                    <%=story.series %> 
+                    <%=story.series %>  <%=story.seriesnum%>
                     <br>
                     <!-- <span class="erasedprice" style="color: red; text-decoration: line-through;">37₪</span> -->
                     <%-story.price%>

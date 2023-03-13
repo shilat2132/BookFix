@@ -1,5 +1,5 @@
 <%-include("parts/showsthead") %>
-<!-- vars: showedstory -->
+<!-- vars: showedstory, series -->
 <script>
     function explain(){
         var exp = document.querySelector("#explain")
@@ -166,10 +166,9 @@ font-size: 29px;
 <div class="container">
     <!-- <a  href="/editstory/<%=showedstory._id%>">עריכת ספר</a> -->
     <div class="show">
-        <span class="storyname"><%=showedstory.series%> 
+        <span class="storyname"><%=showedstory.series%> <%=showedstory.seriesnum%>
             <br><span id="actualname"> <%=showedstory.name%> </span></span>
         <hr class="hr">
-        <span><%=showedstory.seriesnum%> </span>
         <br>
        
             <img  class="showpic" src="<%=showedstory.fullcover%>">
@@ -183,11 +182,11 @@ font-size: 29px;
      <br>
      <span style="font-size: 11px;">
         50% מההכנסות נתרמים לפרוייקט 'ספרים ומצילים' אשר מממן סיוע לכלבים וחתולים
-    </span>
+    </span>     
     </div>
     <div class="container" style="margin-top: 3%;">
-
         <%-showedstory.paybutton%>
+
             <button onclick="explain()" class="digitalg payb col-lg-4 col-sm-4 col-md-4">איך קוראים ספר דיגיטלי</button>
 
             <div  style="display: none;" id="explain">
@@ -197,7 +196,8 @@ font-size: 29px;
             ניתן לשלם גם בביט ולהזין מייל בתשלום, ביט למספר  <a href="tel:+972528799399">052-8799399</a>
             </div>
         </div>
-
+        <br>
+       
     </div>
 </div>
 
@@ -222,7 +222,39 @@ font-size: 29px;
             <div class="chapswords"><%-showedstory.firstChapter%> </div> 
 
         </div>
+
+
+        
+                
+
+                    <% if (showedstory.series!= null){ %>
+                        <div style="margin-top: 9%;" class="seriescol">
+                            <br>
+                    <span class="morewriter">עוד ספרים מהסדרה <%=showedstory.series%></span>
+                    <hr class="hr">
+                    <% series.forEach(function(ser){
+                        if(ser.name != showedstory.name){ %>
+                            <a class="col-lg-4 col-md-6 col-sm-6 indexlink booksindex" href="/showstory/<%=ser._id%>">
+            
+                                <img class="indexpic" src="<%=ser.cover %> ">
+                                <div class="info">
+                                  <b>  <%=ser.name %> 
+                                    <br>
+                                    <%=ser.series %>  <%=ser.seriesnum %> 
+
+               
+                </b>
+            
+            </div>
+                
+                            </a>
+            
+                   <% }})} %>
+                </div>
+
+<br>
     <div style="margin-top: 9%;" class="showcomments container">
+
         <span style=" font-size: 23px;" class="titlefont">תגובות/סקירות על הספר</span>
         <div style="margin-top: 5%">
        <% showedstory.comments.forEach(function(comment){%>
@@ -235,12 +267,14 @@ font-size: 29px;
                 <%})%>
             </div>
     </div>
+
+   
 <form class="commentsform" action="/createcomment/<%=showedstory._id%>" method="post">
 
     <span id="addCom">הוספת תגובה</span>
     <div class="form-group">
         <label>שם</label>
-        <input class="form-control" type="text" required name="comment[name]">
+        <input class="form-control" type="text"  name="comment[name]">
       </div>
       <div class="form-group">
         <label>אימייל</label>
@@ -248,12 +282,11 @@ font-size: 29px;
       </div>
       <div class="form-group">
         <label>תגובה</label>
-        <textarea class="form-control" required name="comment[text]"></textarea>
+        <textarea class="form-control"  name="comment[text]"></textarea>
       </div>
       <div class="form-group">
         <input class="btn submitbtn" class="form-control" type="submit" value="שליחה">
     </div>
 </form>
    
-</div>
 <%-include("parts/footer") %>
